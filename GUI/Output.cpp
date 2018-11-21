@@ -6,20 +6,20 @@ Output::Output()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 	
-	UI.width = 1510;
+	UI.width = 1300;
 	UI.height = 650;
 	UI.wx = 5;
 	UI.wy =5;
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 65;
+	UI.MenuItemWidth = 55;
 	
-	UI.DrawColor = BLUE;	//Drawing color
-	UI.FillColor = GREEN;	//Filling color
-	UI.MsgColor = RED;		//Messages color
-	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
+	UI.DrawColor = BLACK;	//Drawing color
+	UI.FillColor = ROYALBLUE;	//Filling color
+	UI.MsgColor = SNOW;		//Messages color
+	UI.BkGrndColor = BEIGE;	//Background color
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
-	UI.StatusBarColor = TURQUOISE;
+	UI.StatusBarColor = BROWN;
 	UI.PenWidth = 3;	//width of the figures frames
 
 	
@@ -422,37 +422,18 @@ void Output::CreateColorBar() const
 
 
 	//Draw images for Colors
-
+	ClearToolBar();
 	//Draw Color items one image at a time
 	for (int i = 0; i <= 4; i++)
-		pWind->DrawImage(MenuItemImage[i], i*UI.MenuItemWidth + UI.MenuItemWidth * 5, 50, UI.MenuItemWidth, UI.ToolBarHeight);
-	
+		pWind->DrawImage(MenuItemImage[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 	ActionType ActType;
 	Input *pIn = CreateInput();
 	ActType = pIn->GetUserAction();
 
 		switch (ActType)
 		{
-		case DRAW_RECT:
-			PrintMessage("Action: Draw a Rectangle , Click anywhere");
-			break;
-
-		case DRAW_LINE:
-			PrintMessage("Action: Draw a Line , Click anywhere");
-			break;
-
-		case DRAW_RHOMBUS:
-			PrintMessage("Action: Draw a Rhombus , Click anywhere");
-			break;
-
-		case DRAW_ELLIPSE:
-			PrintMessage("Action: Draw an Ellipse , Click anywhere");
-			break;
-
-		case DRAW_TRI:
-			PrintMessage("Action: Draw a Triangle , Click anywhere");
-			break;
-
+		
+		
 		case DRAW_BLACK:
 			PrintMessage("Action: Draw with a Black color , Click anywhere");
 			
@@ -466,64 +447,12 @@ void Output::CreateColorBar() const
 			PrintMessage("Action: Draw with a Blue color , Click anywhere");
 			break;
 
-		case SELECT:
-			PrintMessage("Action: SELECT A Figure , Click anywhere");
-			break;
-
-		case COPY:
-			PrintMessage("Action: COPY A Figure , Click anywhere");
-			break;
-
-		case CUT:
-			PrintMessage("Action: CUT A Figure , Click anywhere");
-			break;
-
-		case PASTE:
-			PrintMessage("Action: PASTE A Figure , Click anywhere");
-			break;
-
-		case DEL:
-			PrintMessage("Action: DELETE A Figure , Click anywhere");
-			break;
-
-		case SAVE:
-			PrintMessage("Action: SAVE THE WHOLE GRAPH , Click anywhere");
-			break;
-
-		case SAVE_BY_TYPE:
-			PrintMessage("Action: SAVE By Type , Click anywhere");
-			break;
-
-		case LOAD:
-			PrintMessage("Action: LOAD A Figure , Click anywhere");
-			break;
-
-		case RESIZE:
-			PrintMessage("Action: RESIZE A Figure , Click anywhere");
-			break;
-
-		case PUSH_FRONT:
-			PrintMessage("Action: Make the figure at the top of other figures , Click anywhere");
-			break;
-
-		case PUSH_BACK:
-			PrintMessage("Action: Make the figure at the back of other figures , Click anywhere");
-			break;
-
 		case DRAW_RED:
 			PrintMessage("Action: Draw with A Red color , Click anywhere");
 			break;
 
 		case DRAW_GREEN:
 			PrintMessage("Action: Draw with A Green color , Click anywhere");
-			break;
-
-		case CHNG_DRAW_CLR:
-			PrintMessage("Action: Change Figure's drawing color , Click anywhere");
-			break;
-
-		case CHNG_FILL_CLR:
-			PrintMessage("Action: Change Figure's Fill color , Click anywhere");
 			break;
 
 		case STATUS:
@@ -538,34 +467,12 @@ void Output::CreateColorBar() const
 			PrintMessage("Action: A click on empty area in the Design Tool Bar, Click anywhere");
 			break;
 
-		case SELECTBYFIGURE:
-			PrintMessage("Action: Select the figures of the same type, Click anywhere");
-			break;
-
-		case SELECTBYCOLOR:
-			PrintMessage("Action: Select the figures of the same color, Click anywhere");
-			break;
-
-		case TO_DRAW:
-			PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
-			CreateDrawToolBar();
-			break;
-
-		case MUTE:
-			PrintMessage("Action: Sound is Muted, Click anywhere");
-			break;
-
-		case UNMUTE:
-			PrintMessage("Action: Sound is Unmuted, Click anywhere");
-			break;
-
-		case EXIT:
-			break;
+		
 		}
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(UI.MenuItemWidth * 5, UI.ToolBarHeight, 10 * UI.MenuItemWidth, 100);
-	UI.InterfaceMode = MODE_DRAW;
+	CreateDrawToolBar();
 }
 //////////////////////////////////////////////////////////////////////////////////////
 

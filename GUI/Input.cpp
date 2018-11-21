@@ -101,47 +101,15 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
-			case ITM_LINE: return DRAW_LINE;
-			case ITM_RECT: return DRAW_RECT;
-			case ITM_TRIANGLE: return DRAW_TRI;
-			case ITM_ELIPSE: return DRAW_ELLIPSE;
-			case ITM_RHOMBUS: return DRAW_RHOMBUS;
-			case ITM_Colors: return DRAW_Colors;
-			case ITM_SELECT: return SELECT;
-			case ITM_CHANGECOLORBYDRAWING: return CHNG_DRAW_CLR;
-			case ITM_CHANGECOLORBYFILLING: return CHNG_FILL_CLR;
-			case ITM_COPY: return COPY;
-			case ITM_CUT: return CUT;
-			case ITM_PASTE: return PASTE;
-			case ITM_DELETE: return DEL;
-			case ITM_SAVEGRAPH: return SAVE;
-			case ITM_SAVETYPE: return SAVE_BY_TYPE;
-			case ITM_LOAD: return LOAD;
-			case ITM_RESIZE: return RESIZE;
-			case ITM_PUSHFRONT:return PUSH_FRONT;
-			case ITM_PUSHBACK:return PUSH_BACK;
-			case ITM_PLAYMODE: return TO_PLAY;
-			case ITM_UNMUTE: return UNMUTE;
-			case ITM_MUTE: return MUTE;
-			case ITM_EXIT: return EXIT;
-
+			case ITM_BLAC:return DRAW_BLACK;
+			case ITM_WHIT:return DRAW_WHITE;
+			case ITM_RE:return DRAW_RED;
+			case ITM_BLU:return DRAW_BLUE;
+			case ITM_GREE:return DRAW_GREEN;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
 
-		//[2] User clicks on the drawing area
-		else if (y >= 50 && y < 100 && x>UI.MenuItemWidth*5 && x<UI.MenuItemWidth*10 )
-		{
-			int ClickedItemOrder = (x / UI.MenuItemWidth);
-			switch (ClickedItemOrder)
-			{
-			case 5: return DRAW_BLACK;
-			case 6: return DRAW_WHITE;
-			case 7: return DRAW_RED;
-			case 8: return DRAW_BLUE;
-			case 9: return DRAW_GREEN;
-			}
-		}
 		else if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
 			return DRAWING_AREA;
