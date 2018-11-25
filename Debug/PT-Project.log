@@ -1,8 +1,16 @@
-﻿Build started 11/21/2018 7:13:39 PM.
-     1>Project "G:\Updated_Project_F18_CMPN103 - with graphics library\Phase1 - Code\PT-Project.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/23/2018 3:52:36 PM.
+     1>Project "G:\Updated_Project_F18_CMPN103 - with graphics library\Phase2 - Project Framework\PT-Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt GUI\Output.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Actions\AddRectAction.cpp ApplicationManager.cpp Figures\CFigure.cpp Figures\CRectangle.cpp GUI\Input.cpp GUI\Output.cpp main.cpp
+         Input.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
          Output.cpp
+         CRectangle.cpp
+         CFigure.cpp
+         ApplicationManager.cpp
+         AddRectAction.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/PT Project.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/PT Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\PT Project.lib" /MACHINE:X86 /SAFESEH .\Debug/auxil.obj
          .\Debug/CMUgraphics.obj
@@ -40,14 +48,18 @@
          .\Debug/jquant1.obj
          .\Debug/jquant2.obj
          .\Debug/jutils.obj
+         .\Debug/CFigure.obj
+         .\Debug/CRectangle.obj
+         .\Debug/AddRectAction.obj
          .\Debug/Input.obj
          .\Debug/Output.obj
-         .\Debug/TestCode.obj
-         PT-Project.vcxproj -> G:\Updated_Project_F18_CMPN103 - with graphics library\Phase1 - Code\.\Debug\PT Project.exe
+         .\Debug/ApplicationManager.obj
+         .\Debug/main.obj
+         PT-Project.vcxproj -> G:\Updated_Project_F18_CMPN103 - with graphics library\Phase2 - Project Framework\.\Debug\PT Project.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o".\Debug/PT Project.bsc" .\Debug\auxil.sbr .\Debug\CMUgraphics.sbr .\Debug\colors.sbr .\Debug\image.sbr .\Debug\jpegload.sbr .\Debug\keyqueue.sbr .\Debug\mousequeue.sbr .\Debug\windowinput.sbr .\Debug\jcomapi.sbr .\Debug\jcparam.sbr .\Debug\jdapimin.sbr .\Debug\jdapistd.sbr .\Debug\jdatasrc.sbr .\Debug\jdcoefct.sbr .\Debug\jdcolor.sbr .\Debug\jddctmgr.sbr .\Debug\jdhuff.sbr .\Debug\jdinput.sbr .\Debug\jdmainct.sbr .\Debug\jdmarker.sbr .\Debug\jdmaster.sbr .\Debug\jdmerge.sbr .\Debug\jdphuff.sbr .\Debug\jdpostct.sbr .\Debug\jdsample.sbr .\Debug\jdtrans.sbr .\Debug\jerror.sbr .\Debug\jidctflt.sbr .\Debug\jidctfst.sbr .\Debug\jidctint.sbr .\Debug\jidctred.sbr .\Debug\jmemmgr.sbr .\Debug\jmemnobs.sbr .\Debug\jquant1.sbr .\Debug\jquant2.sbr .\Debug\jutils.sbr .\Debug\Input.sbr .\Debug\Output.sbr .\Debug\TestCode.sbr
-     1>Done Building Project "G:\Updated_Project_F18_CMPN103 - with graphics library\Phase1 - Code\PT-Project.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o".\Debug/PT Project.bsc" .\Debug\auxil.sbr .\Debug\CMUgraphics.sbr .\Debug\colors.sbr .\Debug\image.sbr .\Debug\jpegload.sbr .\Debug\keyqueue.sbr .\Debug\mousequeue.sbr .\Debug\windowinput.sbr .\Debug\jcomapi.sbr .\Debug\jcparam.sbr .\Debug\jdapimin.sbr .\Debug\jdapistd.sbr .\Debug\jdatasrc.sbr .\Debug\jdcoefct.sbr .\Debug\jdcolor.sbr .\Debug\jddctmgr.sbr .\Debug\jdhuff.sbr .\Debug\jdinput.sbr .\Debug\jdmainct.sbr .\Debug\jdmarker.sbr .\Debug\jdmaster.sbr .\Debug\jdmerge.sbr .\Debug\jdphuff.sbr .\Debug\jdpostct.sbr .\Debug\jdsample.sbr .\Debug\jdtrans.sbr .\Debug\jerror.sbr .\Debug\jidctflt.sbr .\Debug\jidctfst.sbr .\Debug\jidctint.sbr .\Debug\jidctred.sbr .\Debug\jmemmgr.sbr .\Debug\jmemnobs.sbr .\Debug\jquant1.sbr .\Debug\jquant2.sbr .\Debug\jutils.sbr .\Debug\CFigure.sbr .\Debug\CRectangle.sbr .\Debug\AddRectAction.sbr .\Debug\Input.sbr .\Debug\Output.sbr .\Debug\ApplicationManager.sbr .\Debug\main.sbr
+     1>Done Building Project "G:\Updated_Project_F18_CMPN103 - with graphics library\Phase2 - Project Framework\PT-Project.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.64
+Time Elapsed 00:00:02.96

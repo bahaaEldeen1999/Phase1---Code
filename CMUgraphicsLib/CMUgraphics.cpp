@@ -972,7 +972,6 @@ void window::DrawPolygon(const int* ipX, const int* ipY, const int iVertices, co
 	delete ptVertices;
 }
 
-
 void window::DrawCircle(const int iX, const int iY, const int iRadius, const drawstyle dsStyle) {
 
     HRGN rgnTemp;
@@ -981,7 +980,7 @@ void window::DrawCircle(const int iX, const int iY, const int iRadius, const dra
     switch(dsStyle) {
       case FILLED:
 		ChangeDrawStyle(FILLED);	    
- 	    if(Ellipse(dcActive, (iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius)) != TRUE) {
+ 	    if(Ellipse(dcActive, (iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius)) != TRUE) {
             cout << "Fatal Error: Failed to draw filled style in DrawCircle!" << endl;	        	    		     	    
  	    }
  	    RestoreDrawStyle();
@@ -989,14 +988,14 @@ void window::DrawCircle(const int iX, const int iY, const int iRadius, const dra
 
 	  case FRAME:
 		ChangeDrawStyle(FRAME);
- 	    if(Ellipse(dcActive, (iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius)) != TRUE) {
+ 	    if(Ellipse(dcActive, (iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius)) != TRUE) {
  	        cout << "Fatal Error: Failed to draw frame style in DrawCircle!" << endl;	        	    		    
 	    }
  	    RestoreDrawStyle();
 		break;
 		
 	  case INVERTED:
-		rgnTemp = CreateEllipticRgn((iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius));
+		rgnTemp = CreateEllipticRgn((iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius));
  	    if(InvertRgn(dcActive, rgnTemp) != TRUE) {
             cout << "Fatal Error: Failed to draw inverted style in DrawCircle!" << endl;	        	    		     	    
  	    }
