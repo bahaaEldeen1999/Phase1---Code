@@ -1,6 +1,9 @@
 #include "ApplicationManager.h"
 #include "Actions\AddRectAction.h"
-
+#include"Actions/AddLineAction.h"
+#include"Actions/AddTriAction.h"
+#include"Actions/AddEllipseAction.h"
+#include"Actions/AddRhombusAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -39,8 +42,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case DRAW_LINE:
 			///create AddLineAction here
+			pAct = new AddLineAction(this);
 
 			break;
+
+		case DRAW_TRI:
+			pAct = new AddTriAction(this);
+			break;
+
+		case DRAW_ELLIPSE:
+			pAct = new AddEllipseAction(this);
+
+		case DRAW_RHOMBUS:
+			pAct = new AddRhombusAction(this);
 
 		case EXIT:
 			///create ExitAction here
@@ -88,8 +102,10 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
 {	
-	for(int i=0; i<FigCount; i++)
+	for (int i = 0; i < FigCount; i++)
+	{
 		FigList[i]->Draw(pOut);		//Call Draw function (virtual member fn)
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the input
