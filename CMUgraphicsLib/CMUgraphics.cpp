@@ -980,7 +980,7 @@ void window::DrawCircle(const int iX, const int iY, const int iRadius, const dra
     switch(dsStyle) {
       case FILLED:
 		ChangeDrawStyle(FILLED);	    
- 	    if(Ellipse(dcActive, (iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius)) != TRUE) {
+ 	    if(Ellipse(dcActive, (iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius)) != TRUE) {
             cout << "Fatal Error: Failed to draw filled style in DrawCircle!" << endl;	        	    		     	    
  	    }
  	    RestoreDrawStyle();
