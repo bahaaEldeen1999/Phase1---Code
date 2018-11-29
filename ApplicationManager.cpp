@@ -53,8 +53,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DRAW_ELLIPSE:
 			pAct = new AddEllipseAction(this);
 
+			break;
+
 		case DRAW_RHOMBUS:
 			pAct = new AddRhombusAction(this);
+
+			break;
 
 		case EXIT:
 			///create ExitAction here
