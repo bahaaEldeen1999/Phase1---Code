@@ -988,14 +988,14 @@ void window::DrawCircle(const int iX, const int iY, const int iRadius, const dra
 
 	  case FRAME:
 		ChangeDrawStyle(FRAME);
- 	    if(Ellipse(dcActive, (iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius)) != TRUE) {
+ 	    if(Ellipse(dcActive, (iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius)) != TRUE) {
  	        cout << "Fatal Error: Failed to draw frame style in DrawCircle!" << endl;	        	    		    
 	    }
  	    RestoreDrawStyle();
 		break;
 		
 	  case INVERTED:
-		rgnTemp = CreateEllipticRgn((iX - iRadius), (iY - iRadius), (iX + iRadius), (iY + iRadius));
+		rgnTemp = CreateEllipticRgn((iX - iRadius), (iY - 0.5*iRadius), (iX + iRadius), (iY + 0.5*iRadius));
  	    if(InvertRgn(dcActive, rgnTemp) != TRUE) {
             cout << "Fatal Error: Failed to draw inverted style in DrawCircle!" << endl;	        	    		     	    
  	    }
