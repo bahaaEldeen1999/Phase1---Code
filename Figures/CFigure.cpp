@@ -21,3 +21,7 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.FillClr = Fclr; 
 }
 
+bool CFigure ::SelectArea(int x,int y) {
+
+	return true;
+}

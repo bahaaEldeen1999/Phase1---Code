@@ -4,6 +4,7 @@
 #include"Actions/AddTriAction.h"
 #include"Actions/AddEllipseAction.h"
 #include"Actions/AddRhombusAction.h"
+#include "Actions\SelectAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -59,7 +60,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddRhombusAction(this);
 
 			break;
-
+		case SELECT:
+			pAct = new SelectAction(this);
+			
+			break;
 		case EXIT:
 			///create ExitAction here
 			
@@ -92,8 +96,18 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 {
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
+	
+	for (int i=FigCount-1;i>=0;i--) 
+	{
+	if (FigList[i]->SelectArea(x,y)) 
+	{ FigList[i]->SetSelected(true);
+	return FigList[i];}
+
+	}
+	
 
 
+	
 	//Add your code here to search for a figure given a point x,y	
 	//Remember that ApplicationManager only calls functions do NOT implement it.
 
@@ -118,6 +132,11 @@ Input *ApplicationManager::GetInput() const
 //Return a pointer to the output
 Output *ApplicationManager::GetOutput() const
 {	return pOut; }
+////////////////////////////////////////////////////////////////////////////////////
+//sets selected fig
+void ApplicationManager:: SetSelectedFig(CFigure*fig) {
+	SelectedFig=fig;
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor
 ApplicationManager::~ApplicationManager()
