@@ -13,7 +13,23 @@ void CTriangle::Draw(Output * pOut)
 }
 bool CTriangle:: SelectArea(int x,int y)
 {
-	if (x>=corner1.x&&x<=corner2.x&&y>=corner1.y&&y<=corner2.y) return true;
-	return false;
+	float A = area (corner1.x,corner1.y,corner2.x, corner2.y, corner3.x, corner3.y); 
+  
+      
+   float A1 = area (x, y, corner2.x, corner2.y, corner3.x, corner3.y); 
+  
+   float A2 = area (corner1.x, corner1.y, x, y, corner3.x, corner3.y); 
+  
+      
+   float A3 = area (corner1.x, corner1.x, corner2.x, corner2.y, x, y); 
+    
+    float test=abs(A1 + A2 + A3 - A)/(x*y);
+
+   return (test>=0 &&test<=1); 
+	
 
 }
+float CTriangle:: area(int x1, int y1, int x2, int y2, int x3, int y3) 
+{ 
+   return abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0); 
+} 
