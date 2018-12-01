@@ -1,4 +1,5 @@
 #include "Output.h"
+//#include <iostream>
 
 
 Output::Output()
@@ -231,6 +232,7 @@ void Output::DrawRect(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected)
 			pIn->GetPointClicked(P1.x, P1.y);
 			pIn->GetPointClicked(P2.x, P2.y);
 			DrawRect(P1,P2, RectGfxInfo, false);
+			PrintMessage("");
 		}
 
 
@@ -265,6 +267,7 @@ void Output:: DRAWTri(Point &P1, Point &P2, Point &p3, GfxInfo RectGfxInfo, bool
 	}
 	else {
 		if (isChecked(P1) && isChecked(P2) && isChecked(p3)) {
+			//std::cout<<isChecked(P1)<<" "<<isChecked(P2) << " "<<isChecked(p3);
 			pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, p3.x, p3.y, style);
 		}
 		else {
@@ -276,6 +279,7 @@ void Output:: DRAWTri(Point &P1, Point &P2, Point &p3, GfxInfo RectGfxInfo, bool
 			pIn->GetPointClicked(P2.x, P2.y);
 			pIn->GetPointClicked(p3.x, p3.y);
 			DRAWTri(P1, P2, p3, RectGfxInfo, false);
+			PrintMessage("");
 
 		}
 	}
@@ -314,6 +318,7 @@ color DrawingClr;
 			PrintMessage("Drawing an Eclipse   Click one points");
 			pIn->GetPointClicked(P1.x, P1.y);
 			Drawelipse(P1, RectGfxInfo, false);
+			PrintMessage("");
 
 		}
 	}
@@ -361,6 +366,7 @@ color DrawingClr;
 			PrintMessage("Drawing a Rhombus   Click one point");
 			pIn->GetPointClicked(P1.x, P1.y);
 			Draw_poly(P1, RectGfxInfo, false);
+			PrintMessage("");
 
 		}
 	}
@@ -402,6 +408,7 @@ void Output::DrawLine(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected)
 			pIn->GetPointClicked(P1.x, P1.y);
 			pIn->GetPointClicked(P2.x, P2.y);
 			DrawLine(P1, P2, RectGfxInfo, false);
+			PrintMessage("");
 
 		}
 

@@ -16,7 +16,7 @@ void AddTriAction::ReadActionParameters()
 
 	pOut->PrintMessage("New Triangle: Click at first Vertix");
 
-	pIn->GetPointClicked(P1.x, P2.y);
+	pIn->GetPointClicked(P1.x, P1.y);
 
 	pOut->PrintMessage("New Triangle: Click at second Vertix");
 
