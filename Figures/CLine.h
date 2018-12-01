@@ -10,6 +10,6 @@ private:
 	Point sPoint;
 public:
 	CLine(Point, Point, GfxInfo FigureGfxInfo);
-	virtual void Draw(Output* pOut) const;
+	virtual void Draw(Output* pOut) ;
 };
 #endif

@@ -196,7 +196,7 @@ bool Output::isChecked(Point p) const {
 //======================================================================================//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
+void Output::DrawRect(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected) 
 {
 	
 	int x, y;
@@ -242,7 +242,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	
 
 }
-void Output:: DRAWTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo, bool selected) const{
+void Output:: DRAWTri(Point &P1, Point &P2, Point &p3, GfxInfo RectGfxInfo, bool selected) {
 	int x, y;
 	color DrawingClr;
 	if(selected)	
@@ -281,7 +281,7 @@ void Output:: DRAWTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo, bool se
 	}
 	
 }
-void Output:: Drawelipse(Point P1, GfxInfo RectGfxInfo, bool selected) const {
+void Output:: Drawelipse(Point &P1, GfxInfo RectGfxInfo, bool selected)  {
 	int x, y;
 color DrawingClr;
 	if(selected)	
@@ -318,7 +318,7 @@ color DrawingClr;
 		}
 	}
 }
-void Output:: Draw_poly(Point P1, GfxInfo RectGfxInfo, bool selected) const {
+void Output:: Draw_poly(Point &P1, GfxInfo RectGfxInfo, bool selected)  {
 	int x, y;
 int  *xp = new int  [4]; 
 int  *yp = new int  [4]; 
@@ -367,7 +367,7 @@ color DrawingClr;
 	
 }
 	
-void Output::DrawLine(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
+void Output::DrawLine(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected) 
 {
 	int x, y;
 	color DrawingClr;

@@ -7,7 +7,7 @@ CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(Figure
 }
 	
 
-void CRectangle::Draw(Output* pOut) const
+void CRectangle::Draw(Output* pOut) 
 {
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);

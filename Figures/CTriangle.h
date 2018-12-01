@@ -6,5 +6,5 @@ private:
 	Point corner1, corner2, corner3;
 public:
 	CTriangle(Point, Point, Point, GfxInfo FigureGfxInfo);
-	virtual void Draw(Output* pOut) const;
+	virtual void Draw(Output* pOut) ;
 };

@@ -19,11 +19,11 @@ public:
 	//check if point on toolbar
 	bool isChecked(Point p) const;
 	// -- Figures Drawing functions
-	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected=false) const;  //Draw a 
-	void DRAWTri (Point P1, Point P2, Point p3, GfxInfo RectGfxInfo, bool selected=false) const;
-	void Drawelipse (Point P1, GfxInfo RectGfxInfo, bool selected=false) const; 
-	void Draw_poly (Point P1, GfxInfo RectGfxInfo, bool selected=false) const; 
-	void DrawLine(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected = false) const;  
+	void DrawRect(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected=false) ;  //Draw a 
+	void DRAWTri (Point &P1, Point &P2, Point &p3, GfxInfo RectGfxInfo, bool selected=false) ;
+	void Drawelipse (Point &P1, GfxInfo RectGfxInfo, bool selected=false) ; 
+	void Draw_poly (Point &P1, GfxInfo RectGfxInfo, bool selected=false) ; 
+	void DrawLine(Point &P1, Point &P2, GfxInfo RectGfxInfo, bool selected = false) ;  
 	///Make similar functions for drawing all other figure types.
 	
 	void PrintMessage(string msg) const;	//Print a message on Status bar

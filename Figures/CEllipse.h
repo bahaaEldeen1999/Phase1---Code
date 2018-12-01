@@ -7,5 +7,5 @@ private:
 	Point center;
 public:
 	CEllipse(Point, GfxInfo FigGfxInfo);
-	virtual void Draw(Output* pOut) const;
+	virtual void Draw(Output* pOut) ;
 };
