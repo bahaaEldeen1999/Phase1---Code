@@ -11,7 +11,7 @@ private:
 public:
 	CRectangle(Point , Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
-
+    virtual bool SelectArea(int x,int y);
 };
 
 #endif

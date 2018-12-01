@@ -11,3 +11,9 @@ void CTriangle::Draw(Output * pOut) const
 {
 	pOut->DRAWTri(corner1, corner2, corner3, FigGfxInfo, Selected);
 }
+bool CTriangle:: SelectArea(int x,int y)
+{
+	if (x>=corner1.x&&x<=corner2.x&&y>=corner1.y&&y<=corner2.y) return true;
+	return false;
+
+}
