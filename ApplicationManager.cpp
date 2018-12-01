@@ -68,6 +68,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			///create ExitAction here
 			
 			break;
+		case TO_PLAY:
+
+			break;
 		
 		case STATUS:	//a click on the status bar ==> no action
 			return;
