@@ -5,7 +5,7 @@
 #include"Actions/AddEllipseAction.h"
 #include"Actions/AddRhombusAction.h"
 #include "Actions\SelectAction.h"
-
+#include "Actions\DeleteAction.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -64,6 +64,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 			
 			break;
+		case DEL:
+			pAct = new DeleteAction(this);
+			
+			break;
 		case EXIT:
 			///create ExitAction here
 			
@@ -92,7 +96,7 @@ void ApplicationManager::AddFigure(CFigure* pFig)
 		FigList[FigCount++] = pFig;	
 }
 ////////////////////////////////////////////////////////////////////////////////////
-CFigure *ApplicationManager::GetFigure(int x, int y) const
+CFigure *ApplicationManager::GetFigure(int x, int y) 
 {
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
@@ -101,6 +105,7 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 	{
 	if (FigList[i]->SelectArea(x,y)) 
 	{ FigList[i]->SetSelected(true);
+	Fignum=i;
 	return FigList[i];}
 
 	}
@@ -120,6 +125,7 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
 {	
+	pOut->ClearDrawArea();
 	for (int i = 0; i < FigCount; i++)
 	{
 		FigList[i]->Draw(pOut);		//Call Draw function (virtual member fn)
@@ -136,6 +142,34 @@ Output *ApplicationManager::GetOutput() const
 //sets selected fig
 void ApplicationManager:: SetSelectedFig(CFigure*fig) {
 	SelectedFig=fig;
+}
+////////////////////////////////////////////////////////////////////////////////////
+CFigure* ApplicationManager::GetSelectedFig() 
+{
+	return SelectedFig;
+
+}
+////////////////////////////////////////////////////////////////////////////////////
+void ApplicationManager::SetFigCount(int x)
+{
+
+	FigCount=x;
+}
+////////////////////////////////////////////////////////////////////////////////////
+CFigure** ApplicationManager::GetFigList()
+{
+	return FigList;
+
+}
+////////////////////////////////////////////////////////////////////////////////////
+int ApplicationManager::GetFigCount() 
+{
+	return FigCount;
+}
+////////////////////////////////////////////////////////////////////////////////////
+int ApplicationManager::GetFigNum()
+{
+	return Fignum;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

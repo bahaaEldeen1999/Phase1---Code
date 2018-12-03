@@ -16,6 +16,7 @@ private:
 	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
 
 	CFigure* SelectedFig; //Pointer to the selected figure
+	int Fignum;  //Number of Selected figure
 	CFigure* Clipboard;   //Pointer to the copied/cut figure
 
 	//Pointers to Input and Output classes
@@ -33,8 +34,13 @@ public:
 	
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
-	CFigure *GetFigure(int x, int y) const; //Search for a figure given a point inside the figure
+	CFigure *GetFigure(int x, int y) ; //Search for a figure given a point inside the figure
 	void SetSelectedFig(CFigure*);   //Sets Selected Figure
+	void SetFigCount(int);           //Sets Figure Count
+	CFigure* GetSelectedFig();     //Gets Selected Figure
+	CFigure** GetFigList();          //Gets Figure List
+	int GetFigNum();               //Gets Selected Figure number
+	int GetFigCount();              //Gets Figure Count
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
