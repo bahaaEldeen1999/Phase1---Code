@@ -6,6 +6,14 @@
 #include"Actions/AddRhombusAction.h"
 #include "Actions\SelectAction.h"
 #include "Actions\DeleteAction.h"
+#include "Actions/SaveAction.h"
+#include "Actions\Action.h"
+#include "Figures\CEllipse.h"
+#include "Figures\CLine.h"
+#include "Figures\CRectangle.h"
+#include "Figures\CRhombus.h"
+#include "Figures\CTriangle.h"
+#include "Actions\sv.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -59,6 +67,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DRAW_RHOMBUS:
 			pAct = new AddRhombusAction(this);
 
+			break;
+			case SAVE: 
+           pAct = new SaveAction(this);
+		break;
+		case SAVE_BY_TYPE:
+			pAct = new Svt(this);
 			break;
 		case SELECT:
 			pAct = new SelectAction(this);
@@ -170,6 +184,106 @@ int ApplicationManager::GetFigCount()
 int ApplicationManager::GetFigNum()
 {
 	return Fignum;
+}
+void ApplicationManager :: saveall(ofstream &Outfile) {
+	Outfile<<FigCount<<endl; 
+	for (int i = 0; i < FigCount; i++) {
+	FigList [i]->save(Outfile,i);
+	Outfile<<endl;
+}
+}
+void ApplicationManager :: SavebyType (ofstream &Outfile,int x) {
+if (x==0) {
+	int count=0;
+	for (int i = 0; i < FigCount; i++) {
+	CLine *C = dynamic_cast <CLine*> (FigList[i]);
+	if (C!=NULL) {
+	count++;
+	}}
+	if (count!=0)
+	{Outfile<<count<<endl;
+for (int i = 0; i < FigCount; i++) {
+	CLine *C = dynamic_cast <CLine*> (FigList[i]);
+	if (C!=NULL) {
+		C->save(Outfile,i);
+        Outfile<<endl;
+	}
+}
+}
+}
+else if (x==1) {
+	int count=0;
+	for (int i = 0; i < FigCount; i++) {
+	CRectangle*C = dynamic_cast <CRectangle*> (FigList[i]);
+	if (C!=NULL) {
+	count++;
+	}}
+	if (count!=0){
+		Outfile<<count<<endl;
+	
+for (int i = 0; i < FigCount; i++) {
+	CRectangle *C = dynamic_cast <CRectangle*> (FigList[i]);
+	if (C!=NULL) {
+		C->save(Outfile,i);
+		Outfile<<endl;
+	}
+}
+}
+}
+else if (x==2) {
+	int count=0;
+	for (int i = 0; i < FigCount; i++) {
+	CTriangle*C = dynamic_cast <CTriangle*> (FigList[i]);
+	if (C!=NULL) {
+	count++;
+	}}
+	if (count!=0){
+		Outfile<<count<<endl;
+for (int i = 0; i < FigCount; i++) {
+	CTriangle *C = dynamic_cast <CTriangle*> (FigList[i]);
+	if (C!=NULL) {
+		C->save(Outfile,i);
+		Outfile<<endl;
+	}
+}
+}
+}
+else if (x==3) {
+	int count=0;
+	for (int i = 0; i < FigCount; i++) {
+	CEllipse*C = dynamic_cast <CEllipse*> (FigList[i]);
+	if (C!=NULL) {
+	count++;
+	}}
+	if (count!=0){
+		Outfile<<count<<endl;
+for (int i = 0; i < FigCount; i++) {
+	CEllipse *C = dynamic_cast <CEllipse*> (FigList[i]);
+	if (C!=NULL) {
+		C->save(Outfile,i);
+		Outfile<<endl;
+	}
+}
+}
+}
+else   {
+	int count=0;
+	for (int i = 0; i < FigCount; i++) {
+	CRhombus*C = dynamic_cast <CRhombus*> (FigList[i]);
+	if (C!=NULL) {
+	count++;
+	}}
+	if (count!=0){
+		Outfile<<count<<endl;
+for (int i = 0; i < FigCount; i++) {
+	CRhombus*C = dynamic_cast <CRhombus*> (FigList[i]);
+	if (C!=NULL) {
+		C->save(Outfile,i);
+		Outfile<<endl;
+	}
+}
+}
+}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

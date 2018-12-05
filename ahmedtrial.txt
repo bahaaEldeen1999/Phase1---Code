@@ -1,0 +1,6 @@
+5
+Rectangle        0        141      218     305      381     NON_FILL      BLACK   
+Line        1        233      163     230      417     BLACK   
+Rhombus        2        227      265     NON_FILL      BLACK   
+Elipse       3        108      325     NON_FILL      BLACK   
+Rhombus        4        503      286     NON_FILL      BLACK   

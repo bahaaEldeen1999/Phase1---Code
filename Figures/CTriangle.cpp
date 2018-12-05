@@ -1,5 +1,5 @@
 #include "CTriangle.h"
-
+#include"../ApplicationManager.h"
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
 	corner1 = P1;
@@ -33,3 +33,45 @@ float CTriangle:: area(int x1, int y1, int x2, int y2, int x3, int y3)
 { 
    return abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0); 
 } 
+void CTriangle :: save (ofstream &OutFile, int n) {
+	ID = n;
+	OutFile<<"Triangle "<<"       ";
+	OutFile<<ID<<"        "<<corner1.x<<"      "<<corner1.y<<"     "<<corner2.x<<"      "<<corner2.y<<"     "<<corner3.x<<"      "<<corner3.y<<"     ";
+	if (FigGfxInfo.isFilled){
+		if (FigGfxInfo.FillClr == BLACK) {
+		OutFile<<"BLACK"<<"   ";
+		}
+		else if (FigGfxInfo.FillClr == RED) {
+		OutFile<<"RED"<<"   ";
+	}
+		else if (FigGfxInfo.FillClr == BLUE) {
+		OutFile<<"BLUE"<<"   ";
+	}
+		else if (FigGfxInfo.FillClr == GREEN) {
+		OutFile<<"GREEN"<<"   ";
+	}
+		else {
+		OutFile<<"WHITE"<<"   ";
+		}
+}
+	else {
+	OutFile<<"NON_FILL"<<"      ";
+	}
+	if (FigGfxInfo.DrawClr == BLACK) {
+		OutFile<<"BLACK"<<"   ";
+		}
+	else if (FigGfxInfo.DrawClr == RED) {
+		OutFile<<"RED"<<"   ";
+	}
+	else if (FigGfxInfo.DrawClr == BLUE) {
+		OutFile<<"BLUE"<<"   ";
+	}
+	else if (FigGfxInfo.DrawClr== GREEN) {
+		OutFile<<"GREEN"<<"   ";
+	}
+		else {
+		OutFile<<"WHITE"<<"   ";
+		}
+}
+void CTriangle :: load (ifstream &Infile) {
+}

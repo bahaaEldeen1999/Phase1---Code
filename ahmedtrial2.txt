@@ -1,0 +1,3 @@
+2
+Rhombus        2        227      265     NON_FILL      BLACK   
+Rhombus        4        503      286     NON_FILL      BLACK   
