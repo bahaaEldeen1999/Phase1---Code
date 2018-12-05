@@ -13,7 +13,7 @@ void  Svt  ::ReadActionParameters()
 	here:
 	pOut->PrintMessage("Save graphs: Please select the type which will be only saved");
     x=	pIn->GetUserAction();
-	if (x>=0 || x<=4) {
+	if (x>=0 && x<=4) {
 	}
 	else {
     pOut->PrintMessage("Please select a type from statuse bar");
