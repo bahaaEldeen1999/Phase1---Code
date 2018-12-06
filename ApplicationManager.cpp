@@ -22,7 +22,7 @@ ApplicationManager::ApplicationManager()
 	pIn = pOut->CreateInput();
 	
 	FigCount = 0;
-		
+	SelectedFig=NULL;
 	//Create an array of figure pointers and set them to NULL		
 	for(int i=0; i<MaxFigCount; i++)
 		FigList[i] = NULL;	
@@ -115,17 +115,29 @@ CFigure *ApplicationManager::GetFigure(int x, int y)
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
 	
+
 	for (int i=FigCount-1;i>=0;i--) 
 	{
 	if (FigList[i]->SelectArea(x,y)) 
-	{ FigList[i]->SetSelected(true);
-	Fignum=i;
-	return FigList[i];}
-
+	{ 
+		if (FigList[i]->IsSelected()==false)
+			 {FigList[i]->SetSelected(true);
+	          Fignum=i;
+			if (SelectedFig!=NULL){SelectedFig->SetSelected(false);pOut->ClearStatusBar();}// to unhighlight other figures
+	          FigList[i]->PrintInfo(pOut);
+	          return FigList[i];
+		}
+		else 
+		{FigList[i]->SetSelected(false);return NULL;pOut->ClearStatusBar();}
 	}
 	
+	}
+	if (SelectedFig!=NULL)
+	{
+		SelectedFig->SetSelected(false);
+		pOut->ClearStatusBar();
 
-
+	}
 	
 	//Add your code here to search for a figure given a point x,y	
 	//Remember that ApplicationManager only calls functions do NOT implement it.

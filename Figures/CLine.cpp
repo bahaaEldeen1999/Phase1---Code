@@ -14,8 +14,18 @@ void CLine::Draw(Output * pOut)
 
 bool CLine:: SelectArea(int x,int y)
 {
+	int maxx ,minx,miny,maxy;
+
+	if(fPoint.x>sPoint.x) 
+	{maxx=fPoint.x;minx =sPoint.x;}
+	else {maxx=sPoint.x;minx=fPoint.x;}
+
+	if(fPoint.y>sPoint.y) 
+	{maxy=fPoint.y;miny =sPoint.y;}
+	else {maxy=sPoint.y;miny=fPoint.y;}
+
 	int slope= (fPoint.y-sPoint.y)/(fPoint.x-sPoint.x);
-	if ((fPoint.y-y)/(fPoint.x-x)==slope) return true;
+	if ((fPoint.y-y)/(fPoint.x-x)==slope&&x>minx&&x<maxx&&y>miny&&y<maxy) return true;
 	return false;
 
 }
@@ -42,4 +52,13 @@ void CLine :: save (ofstream &OutFile, int n ) {
 }
 
 void CLine:: load (ifstream &Infile) {
+}
+
+void CLine:: PrintInfo(Output* pOut)
+{
+	string p="Ellipse ID:   Point 1: ";
+	p+=to_string(fPoint.x)+' '+to_string(fPoint.y)+"Point 2:"+to_string(sPoint.x)+' '+to_string(sPoint.y) ;
+	pOut->PrintMessage(p);
+
+
 }

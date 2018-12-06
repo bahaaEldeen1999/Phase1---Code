@@ -23,9 +23,9 @@ bool CTriangle:: SelectArea(int x,int y)
       
    float A3 = area (corner1.x, corner1.x, corner2.x, corner2.y, x, y); 
     
-    float test=abs(A1 + A2 + A3 - A)/(x*y);
+    float test=abs((A1 + A2 + A3) /A);
 
-   return (test>=0 &&test<=1); 
+   return (test>0.9&&test<1.1); 
 	
 
 }
@@ -74,4 +74,13 @@ void CTriangle :: save (ofstream &OutFile, int n) {
 		}
 }
 void CTriangle :: load (ifstream &Infile) {
+}
+
+void CTriangle:: PrintInfo(Output* pOut)
+{
+	string p="Ellipse ID:   Point 1: ";
+	p+=to_string(corner1.x)+' '+to_string(corner1.y)+"Point 2:"+to_string(corner2.x)+' '+to_string(corner2.y) +"Point 3: "+to_string(corner3.x)+' '+to_string(corner3.y);
+	pOut->PrintMessage(p);
+
+
 }

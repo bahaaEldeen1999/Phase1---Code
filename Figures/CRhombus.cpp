@@ -12,7 +12,8 @@ void CRhombus::Draw(Output * pOut)
 
 bool CRhombus:: SelectArea(int x,int y)
 {
-	if (x/center.x+y/center.y==1) return true;
+	double f=abs(x-(double)center.x)/50+abs(y-(double)center.y)/100;
+	if (f<=1) return true;
 	return false;
 
 }
@@ -59,5 +60,14 @@ void CRhombus :: save (ofstream &OutFile, int n) {
 
 
 void CRhombus :: load (ifstream &Infile) {
+
+}
+
+void CRhombus:: PrintInfo(Output* pOut)
+{
+	string p="Ellipse ID:   Center: ";
+	p+=to_string(center.x)+' '+to_string(center.y);
+	pOut->PrintMessage(p);
+
 
 }

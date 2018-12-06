@@ -14,6 +14,7 @@ void DeleteAction::ReadActionParameters()
 
 void DeleteAction::Execute() 
 {
+	
 	if (pManager->GetSelectedFig()!=NULL)
 	{
 		CFigure** List =new CFigure*;
@@ -26,7 +27,7 @@ void DeleteAction::Execute()
 		pManager->SetFigCount(pManager->GetFigCount()-1);
 	}
 	
-	
+	pManager->GetOutput()->ClearStatusBar();
 }
 
 DeleteAction::~DeleteAction(void)

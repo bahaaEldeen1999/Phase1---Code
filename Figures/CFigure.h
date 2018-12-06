@@ -4,6 +4,7 @@
 #include "..\defs.h"
 #include "..\GUI\Output.h"
 #include <fstream>
+#include <string.h>
 //Base class for all figures
 class CFigure
 {
@@ -11,7 +12,6 @@ protected:
 	int ID;		//Each figure has an ID
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
-	
 	/// Add more parameters if needed.
 
 public:
@@ -37,6 +37,7 @@ public:
 	virtual void save (ofstream &OutFile, int ) = 0; 
 	virtual void load (ifstream &InFile) = 0;
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
+	virtual void PrintInfo(Output* pOut) = 0;
 };
 
 #endif

@@ -11,14 +11,17 @@ void CEllipse::Draw(Output * pOut)
 }
 bool CEllipse:: SelectArea(int x,int y)
 {
-	if ((x*x)/(center.x*center.x)+(y*y)/(center.y*center.y)<=1) return true;
+	double f =(x-center.x)*(x-(double)center.x)/(100*100)+(y-center.y)*((double)y-center.y)/(50*50);
+	if (f<=1) return true;
 	return false;
 
 }
 
-void CEllipse:: figinfo()
+void CEllipse:: PrintInfo(Output* pOut)
 {
-
+	string p="Ellipse ID:   Center: ";
+	p+=to_string(center.x)+' '+to_string(center.y);
+	pOut->PrintMessage(p);
 
 
 }

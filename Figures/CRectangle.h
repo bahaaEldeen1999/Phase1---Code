@@ -15,6 +15,7 @@ public:
     virtual bool SelectArea(int x,int y);
 	void save (ofstream &OutFile , int );
 	void load (ifstream &Infile ); 
+	void PrintInfo(Output* pOut);
 };
 
 #endif

@@ -62,3 +62,11 @@ void CRectangle :: save (ofstream &OutFile, int n) {
 
 void CRectangle :: load (ifstream &Infile) {
 }
+void CRectangle:: PrintInfo(Output* pOut)
+{
+	string p="Ellipse ID:   Point 1: ";
+	p+=to_string(Corner1.x)+' '+to_string(Corner1.y)+"Point 2:"+to_string(Corner2.x)+' '+to_string(Corner2.y) ;
+	pOut->PrintMessage(p);
+
+
+}
