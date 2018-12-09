@@ -14,6 +14,14 @@
 #include "Figures\CRhombus.h"
 #include "Figures\CTriangle.h"
 #include "Actions\sv.h"
+#include"Actions/FillColorAction.h"
+#include"Actions/BorderColorAction.h"
+#include"Actions/ColorIconAction.h"
+#include"Actions/RedColorAction.h"
+#include"Actions/BlueColorAction.h"
+#include"Actions/GreenColorAction.h"
+#include"Actions/BlackColorAction.h"
+#include"Actions/WhiteColorAction.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -71,6 +79,38 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			case SAVE: 
            pAct = new SaveAction(this);
 		break;
+
+			case DRAW_Colors:
+				pAct = new ColorIconAction(this);
+				break;
+			case CHNG_FILL_CLR:
+				pAct = new FillColorAction(this);
+				break;
+
+			case CHNG_DRAW_CLR:
+				pAct = new BorderColorAction(this);
+				break;
+
+			case DRAW_RED:
+				pAct = new RedColorAction(this);
+				break;
+
+			case DRAW_BLUE:
+				pAct = new BlueColorAction(this);
+				break;
+
+			case DRAW_BLACK:
+				pAct = new BlackColorAction(this);
+				break;
+
+			case DRAW_GREEN:
+				pAct = new GreenColorAction(this);
+				break;
+
+			case DRAW_WHITE:
+				pAct = new WhiteColorAction(this);
+				break;
+
 		case SAVE_BY_TYPE:
 			pAct = new Svt(this);
 			break;
@@ -196,6 +236,14 @@ int ApplicationManager::GetFigCount()
 int ApplicationManager::GetFigNum()
 {
 	return Fignum;
+}
+int ApplicationManager::GetStateNum()
+{
+	return stateNum;
+}
+void ApplicationManager::SetStateNum(int s)
+{
+	stateNum = s;
 }
 void ApplicationManager :: saveall(ofstream &Outfile) {
 	Outfile<<FigCount<<endl; 

@@ -19,6 +19,8 @@ private:
 	int Fignum;  //Number of Selected figure
 	CFigure* Clipboard;   //Pointer to the copied/cut figure
 
+	int stateNum; //if statenum=0 --> non-filled , if statenum=1 --> filled
+
 	//Pointers to Input and Output classes
 	Input *pIn;
 	Output *pOut;
@@ -40,6 +42,8 @@ public:
 	CFigure* GetSelectedFig();     //Gets Selected Figure
 	CFigure** GetFigList();          //Gets Figure List
 	int GetFigNum();               //Gets Selected Figure number
+	int GetStateNum();				//gets whether figure is filled or non-filled
+	void SetStateNum(int);			//sets statenum(whether figure is filled or non-filled)
 	int GetFigCount();              //Gets Figure Count
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input

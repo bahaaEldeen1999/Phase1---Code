@@ -437,7 +437,7 @@ void Output::CreateColorBar() const
 	Input *pIn = CreateInput();
 	ActType = pIn->GetUserAction();
 
-		switch (ActType)
+		/*switch (ActType)
 		{
 		
 		
@@ -479,7 +479,7 @@ void Output::CreateColorBar() const
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(UI.MenuItemWidth * 5, UI.ToolBarHeight, 10 * UI.MenuItemWidth, 100);
-	CreateDrawToolBar();
+	CreateDrawToolBar();*/
 }
 //////////////////////////////////////////////////////////////////////////////////////
 
