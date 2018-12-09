@@ -1,3 +1,4 @@
+#pragma once
 #include "AddEllipseAction.h"
 #include"..\ApplicationManager.h"
 #include"..\GUI\Input.h"

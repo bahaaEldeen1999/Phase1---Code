@@ -20,3 +20,4 @@ bool CLine:: SelectArea(int x,int y)
 	return false;
 
 }
+

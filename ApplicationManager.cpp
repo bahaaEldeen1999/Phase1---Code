@@ -5,6 +5,11 @@
 #include"Actions/AddEllipseAction.h"
 #include"Actions/AddRhombusAction.h"
 #include "Actions\SelectAction.h"
+#include "Actions\PlayAction.h"
+#include "Actions\SelectByColAction.h"
+#include "Actions\SelectByFigAction.h"
+#include "Actions\CopyAction.h"
+#include "Actions\PasteAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -69,7 +74,25 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			
 			break;
 		case TO_PLAY:
+			pOut->CreatePlayToolBar();
 
+			break;
+		case SELECTBYCOLOR:
+			pAct = new SelectByColAction(this);
+
+			break;
+		case SELECTBYFIGURE:
+			pAct = new SelectByFigAction(this);
+
+			break;
+		case TO_DRAW:
+			pOut->CreateDrawToolBar();
+			break;
+		case COPY:
+			pAct = new CopyAction(this);
+			break;
+		case PASTE:
+			pAct = new PasteAction(this);
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no action
@@ -103,8 +126,10 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 	for (int i=FigCount-1;i>=0;i--) 
 	{
 	if (FigList[i]->SelectArea(x,y)) 
-	{ FigList[i]->SetSelected(true);
-	return FigList[i];}
+	{
+	FigList[i]->SetSelected(true);
+	return FigList[i];
+	}
 
 	}
 	
@@ -115,6 +140,38 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 	//Remember that ApplicationManager only calls functions do NOT implement it.
 
 	return NULL;
+}
+//select all figures
+CFigure *ApplicationManager::GetFigures(int x, int y) const
+{
+	//If a figure is found return a pointer to it.
+	//if this point (x,y) does not belong to any figure return NULL
+	
+	for (int i=FigCount-1;i>=0;i--) 
+	{
+	
+	FigList[i]->SetSelected(true);
+	//return FigList[i];
+	
+
+	}
+	
+
+
+	
+	//Add your code here to search for a figure given a point x,y	
+	//Remember that ApplicationManager only calls functions do NOT implement it.
+
+	return NULL;
+}
+//get figures list
+
+CFigure* ApplicationManager::getFigList(){
+
+	return *FigList;
+}
+int ApplicationManager::getFigCount(){
+	return FigCount;
 }
 //==================================================================================//
 //							Interface Management Functions							//

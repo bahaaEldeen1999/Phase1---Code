@@ -16,6 +16,15 @@ class color {
     color(unsigned char Red = 0, unsigned char Green = 0, unsigned char Blue = 0) { 
         ucRed = Red;  ucGreen = Green;  ucBlue = Blue; 
     }
+	bool isSameColor( color b){
+		
+	if( ucBlue == b.ucBlue && ucGreen == b.ucGreen && ucRed == b.ucRed ){
+	return true;
+	}
+	return false;
+
+}
+
 
 
     // Color components.  0 = no intensity, 255 = full intensity
@@ -27,6 +36,8 @@ class color {
 
 bool operator==(color a, color b);
 bool operator!=(color a, color b);
+
+
 
 /*
 

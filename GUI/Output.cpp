@@ -49,7 +49,8 @@ window* Output::CreateWind(int w, int h, int x, int y) const
 	window* pW = new window(w, h, x, y);
 	pW->SetBrush(UI.BkGrndColor);
 	pW->SetPen(UI.BkGrndColor, 1);
-	pW->DrawRectangle(0, UI.ToolBarHeight, w, h);	
+	pW->DrawRectangle(0, UI.ToolBarHeight, w, h);
+	
 	return pW;
 }
 //////////////////////////////////////////////////////////////////////////////////////////

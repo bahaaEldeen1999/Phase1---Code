@@ -1,3 +1,4 @@
+#pragma once
 #include "AddTriAction.h"
 #include"../ApplicationManager.h"
 #include"..\GUI\Input.h"

@@ -1,3 +1,4 @@
+#pragma once
 #include "..\ApplicationManager.h"
 #include "..\Figures\CLine.h"
 #include "..\GUI\Output.h"

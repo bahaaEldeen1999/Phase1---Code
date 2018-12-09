@@ -9,7 +9,9 @@ public:
 
 	virtual void Draw(Output* pOut) ;
 	 virtual bool SelectArea(int x,int y);
-
+	 Point getCenter(){
+	 return center;
+	 }
 	//virtual void Draw(Output* pOut) ;
 
 };

@@ -13,7 +13,8 @@ public:
 
 	virtual void Draw(Output* pOut) ;
     virtual bool SelectArea(int x,int y);
-
+	Point getCorner1();
+	Point getCorner2();
 	//virtual void Draw(Output* pOut) ;
 
 

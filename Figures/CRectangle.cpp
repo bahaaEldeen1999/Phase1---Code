@@ -19,3 +19,10 @@ bool CRectangle:: SelectArea(int x,int y)
 	return false;
 
 }
+Point CRectangle::getCorner1(){
+	return Corner1;
+}
+
+Point CRectangle::getCorner2(){
+	return Corner2;
+}

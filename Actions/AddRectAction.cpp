@@ -1,3 +1,4 @@
+#pragma once
 #include "AddRectAction.h"
 #include "..\Figures\CRectangle.h"
 
