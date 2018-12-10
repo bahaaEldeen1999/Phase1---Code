@@ -52,6 +52,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	void saveall (ofstream &);
 	void SavebyType(ofstream &, int);
+	void Loadme () ;
 };
 
 #endif

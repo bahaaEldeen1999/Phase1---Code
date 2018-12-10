@@ -60,7 +60,34 @@ void CRhombus :: save (ofstream &OutFile, int n) {
 
 
 void CRhombus :: load (ifstream &Infile) {
-
+Infile>>ID; 
+Infile>>center.x;
+Infile>>center.y;
+string y;
+Infile>>y;
+string  Clr;
+Infile>>Clr;
+if (Clr=="BLACK") {
+	FigGfxInfo.DrawClr = BLACK;
+}
+else if (Clr=="RED") {
+	FigGfxInfo.DrawClr = RED;
+}
+else if (Clr=="BLUE") {
+	FigGfxInfo.DrawClr = BLUE;
+}
+else if (Clr=="GREEN") {
+	FigGfxInfo.DrawClr = GREEN;
+}
+else   {
+	FigGfxInfo.DrawClr = WHITE;
+}
+if (y== "NON_FILL") {
+	FigGfxInfo.isFilled = false;
+}
+else {
+	FigGfxInfo.isFilled = true;
+}
 }
 
 void CRhombus:: PrintInfo(Output* pOut)

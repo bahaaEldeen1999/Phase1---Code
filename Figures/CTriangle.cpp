@@ -80,6 +80,38 @@ void CTriangle :: save (ofstream &OutFile, int n) {
 		}
 }
 void CTriangle :: load (ifstream &Infile) {
+Infile>>ID; 
+Infile>>corner1.x;
+Infile>>corner1.y;
+Infile>>corner2.x;
+Infile>>corner2.y;
+Infile>>corner3.x; 
+Infile>>corner3.y;
+string y;
+Infile>>y;
+string  Clr;
+Infile>>Clr;
+if (Clr=="BLACK") {
+	FigGfxInfo.DrawClr = BLACK;
+}
+else if (Clr=="RED") {
+	FigGfxInfo.DrawClr = RED;
+}
+else if (Clr=="BLUE") {
+	FigGfxInfo.DrawClr = BLUE;
+}
+else if (Clr=="GREEN") {
+	FigGfxInfo.DrawClr = GREEN;
+}
+else   {
+	FigGfxInfo.DrawClr = WHITE;
+}
+if (y== "NON_FILL") {
+	FigGfxInfo.isFilled = false;
+}
+else {
+	FigGfxInfo.isFilled = true;
+}
 }
 
 void CTriangle:: PrintInfo(Output* pOut)

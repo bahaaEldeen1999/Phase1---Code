@@ -22,6 +22,7 @@
 #include"Actions/GreenColorAction.h"
 #include"Actions/BlackColorAction.h"
 #include"Actions/WhiteColorAction.h"
+#include "Actions\loadAction.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -121,6 +122,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new DeleteAction(this);
 			
+			break;
+		case LOAD:
+			pAct = new loadAct(this);
 			break;
 		case EXIT:
 			///create ExitAction here
@@ -357,6 +361,13 @@ for (int i = 0; i < FigCount; i++) {
 }
 }
 }
+}
+void ApplicationManager :: Loadme () {
+for(int i=0; i<FigCount; i++){
+	delete FigList[i];}
+for(int i=0; i<MaxFigCount; i++){
+	FigList[i] = NULL;}
+FigCount = 0 ; 
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

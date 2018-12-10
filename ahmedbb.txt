@@ -1,0 +1,3 @@
+2
+Rectangle        0        309      210     537      420     NON_FILL      BLACK   
+Triangle        1        236      188     527      237     389      322     NON_FILL      BLACK   

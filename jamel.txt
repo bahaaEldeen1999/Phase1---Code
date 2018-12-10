@@ -1,0 +1,5 @@
+4
+Triangle        0        295      123     107      484     107      484     NON_FILL      BLACK   
+Rhombus        1        521      185     NON_FILL      BLACK   
+Elipse       2        374      272     NON_FILL      BLACK   
+Line        3        68      166     381      322     BLACK   

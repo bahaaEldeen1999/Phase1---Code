@@ -1,5 +1,7 @@
 #include "CRectangle.h"
 #include"../ApplicationManager.h"
+#include <iostream>
+using namespace std;
 CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
 	Corner1 = P1;
@@ -61,6 +63,36 @@ void CRectangle :: save (ofstream &OutFile, int n) {
 }
 
 void CRectangle :: load (ifstream &Infile) {
+Infile>>ID; 
+Infile>>Corner1.x;
+Infile>>Corner1.y;
+Infile>>Corner2.x;
+Infile>>Corner2.y;
+string y;
+Infile>>y;
+string  Clr;
+Infile>>Clr;
+if (Clr=="BLACK") {
+	FigGfxInfo.DrawClr = BLACK;
+}
+else if (Clr=="RED") {
+	FigGfxInfo.DrawClr = RED;
+}
+else if (Clr=="BLUE") {
+	FigGfxInfo.DrawClr = BLUE;
+}
+else if (Clr=="GREEN") {
+	FigGfxInfo.DrawClr = GREEN;
+}
+else   {
+	FigGfxInfo.DrawClr = WHITE;
+}
+if (y== "NON_FILL") {
+	FigGfxInfo.isFilled = false;
+}
+else {
+	FigGfxInfo.isFilled = true;
+}
 }
 void CRectangle:: PrintInfo(Output* pOut)
 {
