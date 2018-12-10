@@ -45,6 +45,7 @@ public:
 	int GetStateNum();				//gets whether figure is filled or non-filled
 	void SetStateNum(int);			//sets statenum(whether figure is filled or non-filled)
 	int GetFigCount();              //Gets Figure Count
+	void RearrangeDeleted();               //Rearranges figures after delete
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output

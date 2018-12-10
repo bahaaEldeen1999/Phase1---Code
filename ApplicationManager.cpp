@@ -228,6 +228,19 @@ CFigure** ApplicationManager::GetFigList()
 
 }
 ////////////////////////////////////////////////////////////////////////////////////
+void ApplicationManager:: RearrangeDeleted()
+{
+	
+		for (int i=Fignum;i<FigCount-1;i++) 
+		{
+			FigList[i]=FigList[i+1];
+		}
+		FigList[FigCount]=NULL;
+		SetFigCount(FigCount-1);
+
+
+}
+////////////////////////////////////////////////////////////////////////////////////
 int ApplicationManager::GetFigCount() 
 {
 	return FigCount;

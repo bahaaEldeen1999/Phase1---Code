@@ -17,14 +17,7 @@ void DeleteAction::Execute()
 	
 	if (pManager->GetSelectedFig()!=NULL)
 	{
-		CFigure** List =new CFigure*;
-		List =pManager->GetFigList();
-		for (int i=pManager->GetFigNum();i<pManager->GetFigCount()-1;i++) 
-		{
-			List[i]=List[i+1];
-		}
-		List[pManager->GetFigCount()]=NULL;
-		pManager->SetFigCount(pManager->GetFigCount()-1);
+		pManager->RearrangeDeleted();
 	}
 	
 	pManager->GetOutput()->ClearStatusBar();
@@ -33,3 +26,4 @@ void DeleteAction::Execute()
 DeleteAction::~DeleteAction(void)
 {
 }
+
