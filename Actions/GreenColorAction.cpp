@@ -19,24 +19,17 @@ void GreenColorAction::Execute()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMessage("Green Color is selected");
 
-	if (UI.CurrentState == 0 && pManager->GetSelectedFig() != 0)
+	color mycolor = pOut->getCrntFillColor();
+
+	if (pManager->GetStateNum() == 0)
 	{
 		pManager->GetSelectedFig()->ChngDrawClr(GREEN);
+
 	}
-	else if (UI.CurrentState == 1 && pManager->GetSelectedFig() != 0)
+	else
 	{
 		pManager->GetSelectedFig()->ChngFillClr(GREEN);
-	}
-
-	if (UI.CurrentState == 0)
-	{
-		UI.DrawColor = GREEN;
-	}
-	else if (UI.CurrentState == 1)
-	{
-		UI.FillColor = GREEN;
 	}
 
 

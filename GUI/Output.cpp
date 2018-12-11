@@ -435,7 +435,7 @@ void Output::CreateColorBar() const
 		pWind->DrawImage(MenuItemImage[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 	ActionType ActType;
 	Input *pIn = CreateInput();
-	//ActType = pIn->GetUserAction();
+	ActType = pIn->GetUserAction();
 
 		/*switch (ActType)
 		{

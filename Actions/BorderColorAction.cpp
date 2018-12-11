@@ -16,7 +16,7 @@ void BorderColorAction::ReadActionParameters()
 
 	pOut->PrintMessage("Click On Color Palette to choose draw color");
 
-	UI.CurrentState = 0;
+	pManager->SetStateNum(0);
 }
 
 void BorderColorAction::Execute()

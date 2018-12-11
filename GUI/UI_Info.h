@@ -88,8 +88,7 @@ struct UI_Info	//User Interface Info.
 		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-		MenuItemWidth,		//Width of each item in toolbar menu
-		CurrentState=0;		//Check if figure is filled or not(non-filled=0 , filled =1)
+		MenuItemWidth;		//Width of each item in toolbar menu
 
 
 	color DrawColor;		//Drawing color

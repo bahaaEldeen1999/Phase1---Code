@@ -19,24 +19,17 @@ void BlueColorAction::Execute()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMessage("Blue Color is selected");
 
-	if (UI.CurrentState == 0 && pManager->GetSelectedFig() != 0)
+	color mycolor = pOut->getCrntFillColor();
+
+	if (pManager->GetStateNum() == 0)
 	{
 		pManager->GetSelectedFig()->ChngDrawClr(BLUE);
+
 	}
-	else if (UI.CurrentState == 1 && pManager->GetSelectedFig() != 0)
+	else
 	{
 		pManager->GetSelectedFig()->ChngFillClr(BLUE);
-	}
-
-	if (UI.CurrentState == 0)
-	{
-		UI.DrawColor = BLUE;
-	}
-	else if (UI.CurrentState == 1)
-	{
-		UI.FillColor = BLUE;
 	}
 
 

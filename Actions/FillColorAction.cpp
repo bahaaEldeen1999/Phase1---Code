@@ -16,9 +16,7 @@ void FillColorAction::ReadActionParameters()
 
 	pOut->PrintMessage("Click On Color Palette to choose fill color");
 
-	UI.CurrentState = 1;
-	
-	
+	pManager->SetStateNum(1);
 }
 
 void FillColorAction::Execute()
