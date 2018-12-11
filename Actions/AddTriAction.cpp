@@ -26,7 +26,12 @@ void AddTriAction::ReadActionParameters()
 
 	pIn->GetPointClicked(P3.x, P3.y);
 
-	TriGfxInfo.isFilled = false;
+	if (UI.CurrentState == 0)
+		TriGfxInfo.isFilled = false;	//default is not filled
+	else if (UI.CurrentState == 1)
+	{
+		TriGfxInfo.isFilled = true;
+	}
 
 	TriGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	TriGfxInfo.FillClr = pOut->getCrntFillColor();

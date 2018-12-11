@@ -17,7 +17,12 @@ void AddRhombusAction::ReadActionParameters()
 
 	pIn->GetPointClicked(P1.x, P1.y);
 
-	RhombusGfxInfo.isFilled = false;
+	if (UI.CurrentState == 0)
+		RhombusGfxInfo.isFilled = false;	//default is not filled
+	else if (UI.CurrentState == 1)
+	{
+		RhombusGfxInfo.isFilled = true;
+	}
 
 	RhombusGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	RhombusGfxInfo.FillClr = pOut->getCrntFillColor();
