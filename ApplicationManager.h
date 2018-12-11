@@ -40,7 +40,6 @@ public:
 	void SetSelectedFig(CFigure*);   //Sets Selected Figure
 	void SetFigCount(int);           //Sets Figure Count
 	CFigure* GetSelectedFig();     //Gets Selected Figure
-	CFigure** GetFigList();          //Gets Figure List
 	int GetFigNum();               //Gets Selected Figure number
 	int GetStateNum();				//gets whether figure is filled or non-filled
 	void SetStateNum(int);			//sets statenum(whether figure is filled or non-filled)
