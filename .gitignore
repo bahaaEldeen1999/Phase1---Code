@@ -1,0 +1,12 @@
+
+*.ipch
+*.db
+*.obj
+*.sbr
+*.bsc
+*.exe
+*.ilk
+*.pdb
+*.tlog
+*.vcxproj
+*.filters

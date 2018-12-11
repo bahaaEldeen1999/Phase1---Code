@@ -32,6 +32,7 @@ ApplicationManager::ApplicationManager()
 	
 	FigCount = 0;
 	SelectedFig=NULL;
+	UI.FillColor = BLACK;
 	//Create an array of figure pointers and set them to NULL		
 	for(int i=0; i<MaxFigCount; i++)
 		FigList[i] = NULL;	
@@ -253,14 +254,6 @@ int ApplicationManager::GetFigCount()
 int ApplicationManager::GetFigNum()
 {
 	return Fignum;
-}
-int ApplicationManager::GetStateNum()
-{
-	return stateNum;
-}
-void ApplicationManager::SetStateNum(int s)
-{
-	stateNum = s;
 }
 void ApplicationManager :: saveall(ofstream &Outfile) {
 	Outfile<<FigCount<<endl; 
