@@ -16,6 +16,12 @@ public:
 	void save (ofstream &OutFile , int );
 	void load (ifstream &Infile ); 
 	void PrintInfo(Output* pOut);
+	Point getCorner1(){
+	return Corner1;
+	}
+	Point getCorner2(){
+		return Corner2;
+	}
 };
 
 #endif

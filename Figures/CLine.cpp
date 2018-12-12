@@ -56,7 +56,7 @@ void CLine:: load (ifstream &Infile) {
 
 void CLine:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Point 1: ";
+	string p="line ID:   Point 1: ";
 	p+=to_string(fPoint.x)+' '+to_string(fPoint.y)+"Point 2:"+to_string(sPoint.x)+' '+to_string(sPoint.y) ;
 	pOut->PrintMessage(p);
 

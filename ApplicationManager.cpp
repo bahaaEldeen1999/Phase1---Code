@@ -22,6 +22,10 @@
 #include"Actions/GreenColorAction.h"
 #include"Actions/BlackColorAction.h"
 #include"Actions/WhiteColorAction.h"
+#include "Actions\CopyAction.h"
+#include "Actions\PasteAction.h"
+#include "Actions\CutAction.h"
+
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -118,10 +122,21 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 			
 			break;
+		case COPY:
+			pAct = new CopyAction(this);
+			break;
+		case PASTE:
+			pAct = new PasteAction(this);
+			break;
 		case DEL:
 			pAct = new DeleteAction(this);
 			
 			break;
+		case CUT :
+			pAct = new CutAction(this);
+			
+			break;
+
 		case EXIT:
 			///create ExitAction here
 			
@@ -367,4 +382,24 @@ ApplicationManager::~ApplicationManager()
 	delete pIn;
 	delete pOut;
 	
+}
+CFigure *ApplicationManager::GetFigures(int x, int y) const
+{
+	//If a figure is found return a pointer to it.
+	//if this point (x,y) does not belong to any figure return NULL
+	
+	for (int i=FigCount-1;i>=0;i--) 
+	{
+	
+	FigList[i]->SetSelected(true);
+	//return FigList[i];
+	}
+	//get figures list
+	return NULL;
+}
+ CFigure* ApplicationManager::getFigList(){
+ 	return *FigList;
+}
+int ApplicationManager::getFigCount(){
+	return FigCount;
 }

@@ -65,7 +65,7 @@ void CRhombus :: load (ifstream &Infile) {
 
 void CRhombus:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Center: ";
+	string p="rhombus ID:   Center: ";
 	p+=to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 
