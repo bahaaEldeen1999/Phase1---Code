@@ -1,7 +1,8 @@
 #pragma once
 #include "action.h"
 #include "../ApplicationManager.h"
-extern CFigure *copyFigPtr; //copied fig
+extern CFigure *FigPtr; //copied fig
+extern bool isCopy;
 //CFigure* getCopied();
 class CopyAction : public Action
 {
