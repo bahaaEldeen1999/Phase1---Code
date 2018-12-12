@@ -19,7 +19,7 @@ int CTriangle::crossproduct (int p1x,int p1y,int p2x,int p2y)
 
 bool CTriangle::dotproduct(int a,int b) 
 {
-	int t=a*b;
+	long t=a/10000*b;
 	if(t>=0) return true;
 	return false;
 }
