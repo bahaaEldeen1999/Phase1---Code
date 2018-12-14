@@ -133,11 +133,9 @@ else   {
 
 void CTriangle:: PrintInfo(Output* pOut)
 {
-<<<<<<< HEAD
+
 	string p="Triangle ID:   Point 1: ";
-=======
-	string p="triangle ID:   Point 1: ";
->>>>>>> 9ba405bc363774ef0abd7a56c11e2e7db24b022e
+
 	p+=to_string(corner1.x)+' '+to_string(corner1.y)+"Point 2:"+to_string(corner2.x)+' '+to_string(corner2.y) +"Point 3: "+to_string(corner3.x)+' '+to_string(corner3.y);
 	pOut->PrintMessage(p);
 

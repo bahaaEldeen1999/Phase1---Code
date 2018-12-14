@@ -81,11 +81,8 @@ FigGfxInfo.isFilled = false;
 
 void CLine:: PrintInfo(Output* pOut)
 {
-<<<<<<< HEAD
 	string p="Line ID:   Point 1: ";
-=======
-	string p="line ID:   Point 1: ";
->>>>>>> 9ba405bc363774ef0abd7a56c11e2e7db24b022e
+
 	p+=to_string(fPoint.x)+' '+to_string(fPoint.y)+"Point 2:"+to_string(sPoint.x)+' '+to_string(sPoint.y) ;
 	pOut->PrintMessage(p);
 

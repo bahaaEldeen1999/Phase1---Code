@@ -109,11 +109,8 @@ else   {
 
 void CRhombus:: PrintInfo(Output* pOut)
 {
-<<<<<<< HEAD
 	string p="Rhombus ID:   Center: ";
-=======
-	string p="rhombus ID:   Center: ";
->>>>>>> 9ba405bc363774ef0abd7a56c11e2e7db24b022e
+
 	p+=to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 
