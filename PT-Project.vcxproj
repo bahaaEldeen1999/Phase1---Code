@@ -136,10 +136,16 @@
     <ClCompile Include="Actions\BlueColorAction.cpp" />
     <ClCompile Include="Actions\BorderColorAction.cpp" />
     <ClCompile Include="Actions\ColorIconAction.cpp" />
+    <ClCompile Include="Actions\CopyAction.cpp" />
+    <ClCompile Include="Actions\CutAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\FillColorAction.cpp" />
     <ClCompile Include="Actions\GreenColorAction.cpp" />
+
     <ClCompile Include="Actions\loadAction.cpp" />
+
+    <ClCompile Include="Actions\PasteAction.cpp" />
+
     <ClCompile Include="Actions\RedColorAction.cpp" />
     <ClCompile Include="Actions\SaveAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -202,10 +208,16 @@
     <ClInclude Include="Actions\BlueColorAction.h" />
     <ClInclude Include="Actions\BorderColorAction.h" />
     <ClInclude Include="Actions\ColorIconAction.h" />
+    <ClInclude Include="Actions\CopyAction.h" />
+    <ClInclude Include="Actions\CutAction.h" />
     <ClInclude Include="Actions\DeleteAction.h" />
     <ClInclude Include="Actions\FillColorAction.h" />
     <ClInclude Include="Actions\GreenColorAction.h" />
+
     <ClInclude Include="Actions\loadAction.h" />
+
+    <ClInclude Include="Actions\PasteAction.h" />
+
     <ClInclude Include="Actions\RedColorAction.h" />
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />

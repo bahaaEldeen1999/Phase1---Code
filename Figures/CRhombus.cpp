@@ -64,6 +64,7 @@ Infile>>ID;
 Infile>>center.x;
 Infile>>center.y;
 string y;
+string fil;
 Infile>>y;
 string  Clr;
 Infile>>Clr;
@@ -87,12 +88,32 @@ if (y== "NON_FILL") {
 }
 else {
 	FigGfxInfo.isFilled = true;
+fil =y;
+	if (fil=="BLACK") {
+		FigGfxInfo.FillClr= BLACK;
+}
+else if (fil=="RED") {
+	FigGfxInfo.FillClr = RED;
+}
+else if (fil=="BLUE") {
+	FigGfxInfo.FillClr = BLUE;
+}
+else if (fil=="GREEN") {
+	FigGfxInfo.FillClr = GREEN;
+}
+else   {
+	FigGfxInfo.FillClr = WHITE;
+}
 }
 }
 
 void CRhombus:: PrintInfo(Output* pOut)
 {
+<<<<<<< HEAD
 	string p="Rhombus ID:   Center: ";
+=======
+	string p="rhombus ID:   Center: ";
+>>>>>>> 9ba405bc363774ef0abd7a56c11e2e7db24b022e
 	p+=to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 

@@ -9,11 +9,11 @@
 #include "../DEFS.h"
 #include <iostream>
 using namespace std; 
-loadAct  :: loadAct   (ApplicationManager * pApp):Action(pApp)
+loadAct::loadAct(ApplicationManager * pApp):Action(pApp)
 {
 }
 
-void  loadAct   ::ReadActionParameters()
+void  loadAct::ReadActionParameters()
 {
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
@@ -22,7 +22,7 @@ void  loadAct   ::ReadActionParameters()
 	pOut->PrintMessage("You will load from  : "+ file_name);
 }
 
-void  loadAct   ::Execute()
+void  loadAct::Execute()
 {
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
