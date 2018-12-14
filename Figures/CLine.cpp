@@ -24,8 +24,10 @@ bool CLine:: SelectArea(int x,int y)
 	{maxy=fPoint.y;miny =sPoint.y;}
 	else {maxy=sPoint.y;miny=fPoint.y;}
 
-	int slope= (fPoint.y-sPoint.y)/(fPoint.x-sPoint.x);
-	if ((fPoint.y-y)/(fPoint.x-x)==slope&&x>minx&&x<maxx&&y>miny&&y<maxy) return true;
+	float slope= ((float)fPoint.y-sPoint.y)/(fPoint.x-sPoint.x);
+	float test=((float)fPoint.y-y)/(fPoint.x-x);
+	bool A=slope+0.05>=test&&slope-0.05<test;
+	if (A&&x>minx&&x<maxx&&y>miny&&y<maxy) return true;
 	return false;
 
 }
@@ -79,7 +81,7 @@ FigGfxInfo.isFilled = false;
 
 void CLine:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Point 1: ";
+	string p="Line ID:   Point 1: ";
 	p+=to_string(fPoint.x)+' '+to_string(fPoint.y)+"Point 2:"+to_string(sPoint.x)+' '+to_string(sPoint.y) ;
 	pOut->PrintMessage(p);
 

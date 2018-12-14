@@ -92,7 +92,7 @@ else {
 
 void CRhombus:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Center: ";
+	string p="Rhombus ID:   Center: ";
 	p+=to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 

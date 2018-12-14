@@ -1,8 +1,8 @@
-﻿Build started 12/12/2018 6:56:57 PM.
+﻿Build started 12/14/2018 3:13:25 PM.
      1>Project "C:\Users\AG PC\Documents\GitHub\Phase1---Code\PT-Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Figures\CTriangle.cpp
-         CTriangle.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Figures\CLine.cpp
+         CLine.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/PT Project.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/PT Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\PT Project.lib" /MACHINE:X86 /SAFESEH .\Debug/AddEllipseAction.obj
          .\Debug/AddLineAction.obj
@@ -75,4 +75,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.28
+Time Elapsed 00:00:03.85
