@@ -208,7 +208,19 @@
     <ClCompile Include="Actions\WhiteColorAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Actions\loadAction.cpp" />
+=======
+    <ClCompile Include="Actions\PasteAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\CopyAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\CutAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+>>>>>>> bahaa_branch1
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -356,7 +368,19 @@
     <ClInclude Include="Actions\WhiteColorAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Actions\loadAction.h" />
+=======
+    <ClInclude Include="Actions\PasteAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\CopyAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\CutAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+>>>>>>> bahaa_branch1
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

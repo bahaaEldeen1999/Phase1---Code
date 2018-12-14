@@ -4,7 +4,12 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 #include <iostream>
+<<<<<<< HEAD
   CFigure *copyFigPtr = NULL;
+=======
+  CFigure *FigPtr = NULL;
+  bool isCopy;
+>>>>>>> bahaa_branch1
 CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 {
 	//fig = NULL;
@@ -28,7 +33,13 @@ void CopyAction::Execute()
 	
 	//Check for selected figure
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+<<<<<<< HEAD
 	copyFigPtr = pManager->GetFigure(P1.x,P1.y);
+=======
+	FigPtr = NULL;
+	FigPtr = pManager->GetFigure(P1.x,P1.y);
+	isCopy = true;
+>>>>>>> bahaa_branch1
 	//fig->ChngDrawClr(GRAY);
 	//Output* pOut = pManager->GetOutput();
 	//fig->Draw(pOut);

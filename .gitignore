@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *.ipch
 *.db
@@ -10,3 +11,10 @@
 *.tlog
 *.vcxproj
 *.filters
+=======
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+>>>>>>> bahaa_branch1

@@ -49,6 +49,7 @@ public:
 	void saveall (ofstream &);
 	void SavebyType(ofstream &, int);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	int getFigCount();
 	CFigure* getFigList();
@@ -59,6 +60,11 @@ public:
 =======
 	void Loadme () ;
 >>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
+=======
+	int getFigCount();
+	CFigure* getFigList();
+	CFigure *GetFigures(int x, int y) const;
+>>>>>>> bahaa_branch1
 };
 
 #endif
