@@ -1,0 +1,2 @@
+1
+Elipse       0        433      218     NON_FILL      BLACK   

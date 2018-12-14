@@ -25,20 +25,18 @@
 #include "Actions\CopyAction.h"
 #include "Actions\PasteAction.h"
 #include "Actions\CutAction.h"
-
+#include "Actions\stm.h"
 #include "Actions\loadAction.h"
-
-
+#include <Windows.h>
+#include <mmsystem.h>
 #include "Actions\loadAction.h"
-
-
 //Constructor
 ApplicationManager::ApplicationManager()
 {
 	//Create Input and output
 	pOut = new Output;
 	pIn = pOut->CreateInput();
-
+	is_mute = 0;
 	FigCount = 0;
 	SelectedFig=NULL;
 	UI.FillColor = BLACK;
@@ -66,26 +64,33 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	{
 		case DRAW_RECT:
 			pAct = new AddRectAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("rectangle.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_LINE:
 			///create AddLineAction here
 			pAct = new AddLineAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("line.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_TRI:
 			pAct = new AddTriAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("tri.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_ELLIPSE:
 			pAct = new AddEllipseAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("elipse.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_RHOMBUS:
 			pAct = new AddRhombusAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("rho.wav"),NULL, SND_SYNC);
 			break;
 			case SAVE:
            pAct = new SaveAction(this);
@@ -147,11 +152,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case LOAD:
 			pAct = new loadAct(this);
 			break;
-
+			case TO_PLAY :
+				pAct = new stm (this);
+				break;
 
 		case EXIT:
-			///create ExitAction here
-
+				{
+		for(int i=0; i<FigCount; i++)
+		delete FigList[i];
+	delete pIn;
+	delete pOut;
+	delete pAct;
+	PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);
+				}
 			break;
 
 		case STATUS:	//a click on the status bar ==> no action

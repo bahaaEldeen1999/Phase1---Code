@@ -12,6 +12,7 @@ class ApplicationManager
 	enum { MaxFigCount = 200 };	//Max no of figures
 
 private:
+	bool is_mute;
 	int FigCount;		//Actual number of figures
 	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
 

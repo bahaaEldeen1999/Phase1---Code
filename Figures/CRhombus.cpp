@@ -64,6 +64,7 @@ Infile>>ID;
 Infile>>center.x;
 Infile>>center.y;
 string y;
+string fil;
 Infile>>y;
 string  Clr;
 Infile>>Clr;
@@ -87,6 +88,22 @@ if (y== "NON_FILL") {
 }
 else {
 	FigGfxInfo.isFilled = true;
+fil =y;
+	if (fil=="BLACK") {
+		FigGfxInfo.FillClr= BLACK;
+}
+else if (fil=="RED") {
+	FigGfxInfo.FillClr = RED;
+}
+else if (fil=="BLUE") {
+	FigGfxInfo.FillClr = BLUE;
+}
+else if (fil=="GREEN") {
+	FigGfxInfo.FillClr = GREEN;
+}
+else   {
+	FigGfxInfo.FillClr = WHITE;
+}
 }
 }
 
