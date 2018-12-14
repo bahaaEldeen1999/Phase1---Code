@@ -48,6 +48,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	void saveall (ofstream &);
 	void SavebyType(ofstream &, int);
+<<<<<<< HEAD
 
 	int getFigCount();
 	CFigure* getFigList();
@@ -55,6 +56,9 @@ public:
 
 	void Loadme () ;
 
+=======
+	void Loadme () ;
+>>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
 };
 
 #endif

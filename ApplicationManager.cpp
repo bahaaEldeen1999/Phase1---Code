@@ -23,6 +23,7 @@
 #include"Actions/BlackColorAction.h"
 #include"Actions/WhiteColorAction.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "Actions\CopyAction.h"
 #include "Actions\PasteAction.h"
 #include "Actions\CutAction.h"
@@ -30,6 +31,9 @@
 =======
 #include "Actions\loadAction.h"
 
+=======
+#include "Actions\loadAction.h"
+>>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -137,6 +141,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new DeleteAction(this);
 			
 			break;
+<<<<<<< HEAD
 
 		case CUT :
 			pAct = new CutAction(this);
@@ -148,6 +153,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new loadAct(this);
 			break;
 
+=======
+		case LOAD:
+			pAct = new loadAct(this);
+			break;
+>>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
 		case EXIT:
 			///create ExitAction here
 			
