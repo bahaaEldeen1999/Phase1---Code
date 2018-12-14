@@ -22,6 +22,14 @@
 #include"Actions/GreenColorAction.h"
 #include"Actions/BlackColorAction.h"
 #include"Actions/WhiteColorAction.h"
+<<<<<<< HEAD
+#include "Actions\CopyAction.h"
+#include "Actions\PasteAction.h"
+#include "Actions\CutAction.h"
+
+=======
+#include "Actions\loadAction.h"
+
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -31,6 +39,7 @@ ApplicationManager::ApplicationManager()
 	
 	FigCount = 0;
 	SelectedFig=NULL;
+	UI.FillColor = BLACK;
 	//Create an array of figure pointers and set them to NULL		
 	for(int i=0; i<MaxFigCount; i++)
 		FigList[i] = NULL;	
@@ -118,10 +127,27 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 			
 			break;
+		case COPY:
+			pAct = new CopyAction(this);
+			break;
+		case PASTE:
+			pAct = new PasteAction(this);
+			break;
 		case DEL:
 			pAct = new DeleteAction(this);
 			
 			break;
+
+		case CUT :
+			pAct = new CutAction(this);
+			
+			break;
+
+
+		case LOAD:
+			pAct = new loadAct(this);
+			break;
+
 		case EXIT:
 			///create ExitAction here
 			
@@ -222,12 +248,7 @@ void ApplicationManager::SetFigCount(int x)
 	FigCount=x;
 }
 ////////////////////////////////////////////////////////////////////////////////////
-CFigure** ApplicationManager::GetFigList()
-{
-	return FigList;
 
-}
-////////////////////////////////////////////////////////////////////////////////////
 void ApplicationManager:: RearrangeDeleted()
 {
 	
@@ -249,14 +270,6 @@ int ApplicationManager::GetFigCount()
 int ApplicationManager::GetFigNum()
 {
 	return Fignum;
-}
-int ApplicationManager::GetStateNum()
-{
-	return stateNum;
-}
-void ApplicationManager::SetStateNum(int s)
-{
-	stateNum = s;
 }
 void ApplicationManager :: saveall(ofstream &Outfile) {
 	Outfile<<FigCount<<endl; 
@@ -358,6 +371,13 @@ for (int i = 0; i < FigCount; i++) {
 }
 }
 }
+void ApplicationManager :: Loadme () {
+for(int i=0; i<FigCount; i++){
+	delete FigList[i];}
+for(int i=0; i<MaxFigCount; i++){
+	FigList[i] = NULL;}
+FigCount = 0 ; 
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor
 ApplicationManager::~ApplicationManager()
@@ -367,4 +387,24 @@ ApplicationManager::~ApplicationManager()
 	delete pIn;
 	delete pOut;
 	
+}
+CFigure *ApplicationManager::GetFigures(int x, int y) const
+{
+	//If a figure is found return a pointer to it.
+	//if this point (x,y) does not belong to any figure return NULL
+	
+	for (int i=FigCount-1;i>=0;i--) 
+	{
+	
+	FigList[i]->SetSelected(true);
+	//return FigList[i];
+	}
+	//get figures list
+	return NULL;
+}
+ CFigure* ApplicationManager::getFigList(){
+ 	return *FigList;
+}
+int ApplicationManager::getFigCount(){
+	return FigCount;
 }

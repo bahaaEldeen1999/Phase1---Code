@@ -139,6 +139,7 @@
     <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\FillColorAction.cpp" />
     <ClCompile Include="Actions\GreenColorAction.cpp" />
+    <ClCompile Include="Actions\loadAction.cpp" />
     <ClCompile Include="Actions\RedColorAction.cpp" />
     <ClCompile Include="Actions\SaveAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="Actions\DeleteAction.h" />
     <ClInclude Include="Actions\FillColorAction.h" />
     <ClInclude Include="Actions\GreenColorAction.h" />
+    <ClInclude Include="Actions\loadAction.h" />
     <ClInclude Include="Actions\RedColorAction.h" />
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />

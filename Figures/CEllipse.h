@@ -13,4 +13,7 @@ public:
 	void save (ofstream &OutFile , int );
 	void load (ifstream &Infile ); 
 	void PrintInfo(Output* pOut);
+	 Point getCenter(){
+	 return center;
+	 }
 };

@@ -19,7 +19,7 @@ int CTriangle::crossproduct (int p1x,int p1y,int p2x,int p2y)
 
 bool CTriangle::dotproduct(int a,int b) 
 {
-	int t=a*b;
+	long t=a/10000*b;
 	if(t>=0) return true;
 	return false;
 }
@@ -80,11 +80,43 @@ void CTriangle :: save (ofstream &OutFile, int n) {
 		}
 }
 void CTriangle :: load (ifstream &Infile) {
+Infile>>ID; 
+Infile>>corner1.x;
+Infile>>corner1.y;
+Infile>>corner2.x;
+Infile>>corner2.y;
+Infile>>corner3.x; 
+Infile>>corner3.y;
+string y;
+Infile>>y;
+string  Clr;
+Infile>>Clr;
+if (Clr=="BLACK") {
+	FigGfxInfo.DrawClr = BLACK;
+}
+else if (Clr=="RED") {
+	FigGfxInfo.DrawClr = RED;
+}
+else if (Clr=="BLUE") {
+	FigGfxInfo.DrawClr = BLUE;
+}
+else if (Clr=="GREEN") {
+	FigGfxInfo.DrawClr = GREEN;
+}
+else   {
+	FigGfxInfo.DrawClr = WHITE;
+}
+if (y== "NON_FILL") {
+	FigGfxInfo.isFilled = false;
+}
+else {
+	FigGfxInfo.isFilled = true;
+}
 }
 
 void CTriangle:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Point 1: ";
+	string p="triangle ID:   Point 1: ";
 	p+=to_string(corner1.x)+' '+to_string(corner1.y)+"Point 2:"+to_string(corner2.x)+' '+to_string(corner2.y) +"Point 3: "+to_string(corner3.x)+' '+to_string(corner3.y);
 	pOut->PrintMessage(p);
 

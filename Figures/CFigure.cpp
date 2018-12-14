@@ -25,3 +25,6 @@ bool CFigure ::SelectArea(int x,int y) {
 
 	return true;
 }
+GfxInfo CFigure::getInfo(){
+	return FigGfxInfo;
+}

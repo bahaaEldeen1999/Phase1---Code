@@ -17,7 +17,12 @@ void AddEllipseAction::ReadActionParameters()
 
 	pIn->GetPointClicked(P1.x, P1.y);
 
-	EllipseGfxInfo.isFilled = false;
+	if (UI.CurrentState == 0)
+		EllipseGfxInfo.isFilled = false;	//default is not filled
+	else if (UI.CurrentState == 1)
+	{
+		EllipseGfxInfo.isFilled = true;
+	}
 
 	EllipseGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	EllipseGfxInfo.FillClr = pOut->getCrntFillColor();

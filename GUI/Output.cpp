@@ -22,6 +22,7 @@ Output::Output()
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = BROWN;
 	UI.PenWidth = 3;	//width of the figures frames
+	UI.CurrentState=0;  //Check if figure is filled or not(non-filled=0 , filled =1)
 
 	
 	//Create the output window
@@ -435,7 +436,7 @@ void Output::CreateColorBar() const
 		pWind->DrawImage(MenuItemImage[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 	ActionType ActType;
 	Input *pIn = CreateInput();
-	ActType = pIn->GetUserAction();
+	//ActType = pIn->GetUserAction();
 
 		/*switch (ActType)
 		{

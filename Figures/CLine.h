@@ -16,5 +16,11 @@ public:
 	 void save (ofstream &OutFile , int );
 	void load (ifstream &Infile ); 
 	void PrintInfo(Output* pOut);
+	 Point getPoint1(){
+		 return fPoint;
+	 }
+	 Point getPoint2(){
+		 return sPoint;
+	 }
 };
 #endif
