@@ -49,7 +49,6 @@ public:
 	void saveall (ofstream &);
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
-=======
 	int getFigCount();
 	CFigure* getFigList();
 	CFigure *GetFigures(int x, int y) const;

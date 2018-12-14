@@ -4,9 +4,9 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 #include <iostream>
-<<<<<<< HEAD
+
   CFigure *copyFigPtr = NULL;
-=======
+
   CFigure *FigPtr = NULL;
   bool isCopy;
 
@@ -33,9 +33,9 @@ void CopyAction::Execute()
 
 	//Check for selected figure
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
-<<<<<<< HEAD
+
 	copyFigPtr = pManager->GetFigure(P1.x,P1.y);
-=======
+
 	FigPtr = NULL;
 	FigPtr = pManager->GetFigure(P1.x,P1.y);
 	isCopy = true;

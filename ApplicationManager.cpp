@@ -28,9 +28,9 @@
 
 #include "Actions\loadAction.h"
 
-=======
+
 #include "Actions\loadAction.h"
-=======
+
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -47,9 +47,9 @@ ApplicationManager::ApplicationManager()
 		FigList[i] = NULL;
 }
 
-//==================================================================================//
+//=====//
 //								Actions Related Functions							//
-//==================================================================================//
+//=====//
 ActionType ApplicationManager::GetUserAction() const
 {
 	//Ask the input to get the action from the user.
@@ -147,7 +147,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case LOAD:
 			pAct = new loadAct(this);
 			break;
-=======
+
 
 		case EXIT:
 			///create ExitAction here
@@ -166,9 +166,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = NULL;
 	}
 }
-//==================================================================================//
+//=====//
 //						Figures Management Functions								//
-//==================================================================================//
+//=====//
 
 //Add a figure to the list of figures
 void ApplicationManager::AddFigure(CFigure* pFig)
@@ -211,9 +211,9 @@ CFigure *ApplicationManager::GetFigure(int x, int y)
 
 	return NULL;
 }
-//==================================================================================//
+//=====//
 //							Interface Management Functions							//
-//==================================================================================//
+//=====//
 
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const

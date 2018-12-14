@@ -104,7 +104,7 @@ void PasteAction::Execute()
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 	}
-	i++;
+
 
 	/*
 	if(isCopy == true){
