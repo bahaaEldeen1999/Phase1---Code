@@ -24,15 +24,15 @@ private:
 	Input *pIn;
 	Output *pOut;
 
-public:	
-	ApplicationManager(); 
+public:
+	ApplicationManager();
 	~ApplicationManager();
-	
+
 	// -- Action-Related Functions
 	//Reads the input command from the user and returns the corresponding action type
 	ActionType GetUserAction() const;
 	void ExecuteAction(ActionType) ; //Creates an action and executes it
-	
+
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
 	CFigure *GetFigure(int x, int y) ; //Search for a figure given a point inside the figure
@@ -45,26 +45,15 @@ public:
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
-	void UpdateInterface() const;	//Redraws all the drawing window	
+	void UpdateInterface() const;	//Redraws all the drawing window
 	void saveall (ofstream &);
 	void SavebyType(ofstream &, int);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-	int getFigCount();
-	CFigure* getFigList();
-	CFigure *GetFigures(int x, int y) const;
-
 	void Loadme () ;
-
-=======
-	void Loadme () ;
->>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
 =======
 	int getFigCount();
 	CFigure* getFigList();
 	CFigure *GetFigures(int x, int y) const;
->>>>>>> bahaa_branch1
+
 };
 
 #endif

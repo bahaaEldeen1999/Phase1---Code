@@ -22,37 +22,29 @@
 #include"Actions/GreenColorAction.h"
 #include"Actions/BlackColorAction.h"
 #include"Actions/WhiteColorAction.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bahaa_branch1
 #include "Actions\CopyAction.h"
 #include "Actions\PasteAction.h"
 #include "Actions\CutAction.h"
 
-<<<<<<< HEAD
-=======
 #include "Actions\loadAction.h"
 
 =======
 #include "Actions\loadAction.h"
->>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
 =======
->>>>>>> bahaa_branch1
+
 //Constructor
 ApplicationManager::ApplicationManager()
 {
 	//Create Input and output
 	pOut = new Output;
 	pIn = pOut->CreateInput();
-	
+
 	FigCount = 0;
 	SelectedFig=NULL;
 	UI.FillColor = BLACK;
-	//Create an array of figure pointers and set them to NULL		
+	//Create an array of figure pointers and set them to NULL
 	for(int i=0; i<MaxFigCount; i++)
-		FigList[i] = NULL;	
+		FigList[i] = NULL;
 }
 
 //==================================================================================//
@@ -61,14 +53,14 @@ ApplicationManager::ApplicationManager()
 ActionType ApplicationManager::GetUserAction() const
 {
 	//Ask the input to get the action from the user.
-	return pIn->GetUserAction();		
+	return pIn->GetUserAction();
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Creates an action and executes it
-void ApplicationManager::ExecuteAction(ActionType ActType) 
+void ApplicationManager::ExecuteAction(ActionType ActType)
 {
 	Action* pAct = NULL;
-	
+
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
 	{
@@ -95,7 +87,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddRhombusAction(this);
 
 			break;
-			case SAVE: 
+			case SAVE:
            pAct = new SaveAction(this);
 		break;
 
@@ -135,7 +127,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case SELECT:
 			pAct = new SelectAction(this);
-			
+
 			break;
 		case COPY:
 			pAct = new CopyAction(this);
@@ -145,40 +137,27 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case DEL:
 			pAct = new DeleteAction(this);
-			
-			break;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> bahaa_branch1
+			break;
 		case CUT :
 			pAct = new CutAction(this);
-			
-			break;
 
-<<<<<<< HEAD
+			break;
 
 		case LOAD:
 			pAct = new loadAct(this);
 			break;
+=======
 
-=======
-		case LOAD:
-			pAct = new loadAct(this);
-			break;
->>>>>>> df9565aab0982e931de6fd42c6bcb6f25f8ed00d
-=======
->>>>>>> bahaa_branch1
 		case EXIT:
 			///create ExitAction here
-			
+
 			break;
-		
+
 		case STATUS:	//a click on the status bar ==> no action
 			return;
 	}
-	
+
 	//Execute the created action
 	if(pAct != NULL)
 	{
@@ -195,19 +174,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 void ApplicationManager::AddFigure(CFigure* pFig)
 {
 	if(FigCount < MaxFigCount )
-		FigList[FigCount++] = pFig;	
+		FigList[FigCount++] = pFig;
 }
 ////////////////////////////////////////////////////////////////////////////////////
-CFigure *ApplicationManager::GetFigure(int x, int y) 
+CFigure *ApplicationManager::GetFigure(int x, int y)
 {
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
-	
 
-	for (int i=FigCount-1;i>=0;i--) 
+
+	for (int i=FigCount-1;i>=0;i--)
 	{
-	if (FigList[i]->SelectArea(x,y)) 
-	{ 
+	if (FigList[i]->SelectArea(x,y))
+	{
 		if (FigList[i]->IsSelected()==false)
 			 {FigList[i]->SetSelected(true);
 	          Fignum=i;
@@ -215,10 +194,10 @@ CFigure *ApplicationManager::GetFigure(int x, int y)
 	          FigList[i]->PrintInfo(pOut);
 	          return FigList[i];
 		}
-		else 
+		else
 		{FigList[i]->SetSelected(false);return NULL;pOut->ClearStatusBar();}
 	}
-	
+
 	}
 	if (SelectedFig!=NULL)
 	{
@@ -226,8 +205,8 @@ CFigure *ApplicationManager::GetFigure(int x, int y)
 		pOut->ClearStatusBar();
 
 	}
-	
-	//Add your code here to search for a figure given a point x,y	
+
+	//Add your code here to search for a figure given a point x,y
 	//Remember that ApplicationManager only calls functions do NOT implement it.
 
 	return NULL;
@@ -238,7 +217,7 @@ CFigure *ApplicationManager::GetFigure(int x, int y)
 
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
-{	
+{
 	pOut->ClearDrawArea();
 	for (int i = 0; i < FigCount; i++)
 	{
@@ -258,7 +237,7 @@ void ApplicationManager:: SetSelectedFig(CFigure*fig) {
 	SelectedFig=fig;
 }
 ////////////////////////////////////////////////////////////////////////////////////
-CFigure* ApplicationManager::GetSelectedFig() 
+CFigure* ApplicationManager::GetSelectedFig()
 {
 	return SelectedFig;
 
@@ -273,8 +252,8 @@ void ApplicationManager::SetFigCount(int x)
 
 void ApplicationManager:: RearrangeDeleted()
 {
-	
-		for (int i=Fignum;i<FigCount-1;i++) 
+
+		for (int i=Fignum;i<FigCount-1;i++)
 		{
 			FigList[i]=FigList[i+1];
 		}
@@ -284,7 +263,7 @@ void ApplicationManager:: RearrangeDeleted()
 
 }
 ////////////////////////////////////////////////////////////////////////////////////
-int ApplicationManager::GetFigCount() 
+int ApplicationManager::GetFigCount()
 {
 	return FigCount;
 }
@@ -294,7 +273,7 @@ int ApplicationManager::GetFigNum()
 	return Fignum;
 }
 void ApplicationManager :: saveall(ofstream &Outfile) {
-	Outfile<<FigCount<<endl; 
+	Outfile<<FigCount<<endl;
 	for (int i = 0; i < FigCount; i++) {
 	FigList [i]->save(Outfile,i);
 	Outfile<<endl;
@@ -328,7 +307,7 @@ else if (x==1) {
 	}}
 	if (count!=0){
 		Outfile<<count<<endl;
-	
+
 for (int i = 0; i < FigCount; i++) {
 	CRectangle *C = dynamic_cast <CRectangle*> (FigList[i]);
 	if (C!=NULL) {
@@ -398,7 +377,7 @@ for(int i=0; i<FigCount; i++){
 	delete FigList[i];}
 for(int i=0; i<MaxFigCount; i++){
 	FigList[i] = NULL;}
-FigCount = 0 ; 
+FigCount = 0 ;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor
@@ -408,16 +387,16 @@ ApplicationManager::~ApplicationManager()
 		delete FigList[i];
 	delete pIn;
 	delete pOut;
-	
+
 }
 CFigure *ApplicationManager::GetFigures(int x, int y) const
 {
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
-	
-	for (int i=FigCount-1;i>=0;i--) 
+
+	for (int i=FigCount-1;i>=0;i--)
 	{
-	
+
 	FigList[i]->SetSelected(true);
 	//return FigList[i];
 	}
