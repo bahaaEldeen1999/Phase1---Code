@@ -12,31 +12,31 @@
 #include <cmath>
  PasteAction::PasteAction(ApplicationManager * pApp) :Action(pApp)
 {
-	
+
 }
- void PasteAction::ReadActionParameters() 
-{	
+ void PasteAction::ReadActionParameters()
+{
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
  	pOut->PrintMessage("click a point to paste the figure");
-	
+
 	//Read 1st corner and store in point P1
 	pIn->GetPointClicked(P1.x, P1.y);
 	pOut->ClearStatusBar();
 }
  //Execute the action
-void PasteAction::Execute() 
+void PasteAction::Execute()
 {
 	//This action needs to read some parameters first
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
 //	std::cout<<"k";
-	
+
 	CFigure *f = FigPtr;
 	//CFigure *g = cutFigPtr;
-	
-	
+
+
 	//f->ChngFillClr(BLUE);
 	Point p1;
 	Point p2;
@@ -48,7 +48,7 @@ void PasteAction::Execute()
 	CTriangle *o = dynamic_cast<CTriangle*>(f);
 	//std::cout<<P1.x<<" ";
 	if( k != NULL ){
-	
+
 		p1.x = P1.x  ;
 		p1.y = P1.y ;
 		p2.x =P1.x + abs(k->getCorner1().x - k->getCorner2().x)   ;
@@ -59,9 +59,9 @@ void PasteAction::Execute()
 		//std::cout<<" k "<<" ";
 		pManager->AddFigure(r);
 		//std::cout<<"k";
-	
+
 	}else if( l != NULL){
-	
+
 		p1.x = P1.x;
 		p1.y = P1.y;
 		p2.y = p1.y - l->getPoint1().y + l->getPoint2().y;
@@ -71,7 +71,7 @@ void PasteAction::Execute()
 		CLine *r = new CLine(p1,p2,t);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
-	
+
 	}else if(m  != NULL){
 		p1.x = P1.x;
 		p1.y = P1.y;
@@ -80,7 +80,7 @@ void PasteAction::Execute()
 		//r->Draw(pOut);
 
 		pManager->AddFigure(r);
-	
+
 	}else if( n != NULL){
 		p1.x = P1.x;
 		p1.y = P1.y;
@@ -88,10 +88,10 @@ void PasteAction::Execute()
 		CEllipse *r = new CEllipse(p1,t);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
-	
-	
+
+
 	}else if(o  != NULL){
-	
+
 	p1.x = P1.x;
 	p1.y = P1.y;
 	p2.x = o->getCorner2().x - o->getCorner1().x + P1.x ;
@@ -105,11 +105,11 @@ void PasteAction::Execute()
 		pManager->AddFigure(r);
 	}
 	i++;
-	
+
 	/*
 	if(isCopy == true){
-	
- 	
+
+
 	} else if( isCopy == false ){
 		//std::cout<<" k "<<" ";
 	CRectangle *k = dynamic_cast<CRectangle*>(f);
@@ -119,21 +119,21 @@ void PasteAction::Execute()
 	CTriangle *o = dynamic_cast<CTriangle*>(f);
 
 		if( k != NULL ){
-	
+
 		p1.x = P1.x  ;
 		p1.y = P1.y ;
 		p2.x =P1.x + abs(k->getCorner1().x - k->getCorner2().x)   ;
 		p2.y = P1.y + abs(k->getCorner2().y -  k->getCorner1().y) ;
 		GfxInfo t = k->getInfo();
-		
+
 		std::cout<<P1.x<<" ";
 		CRectangle *r = new CRectangle(p1,p2,t);
 		//std::cout<<" k "<<" ";
 		pManager->AddFigure(r);
 		//std::cout<<"k";
-	
+
 	}else if( l != NULL){
-	
+
 		p1.x = P1.x;
 		p1.y = P1.y;
 		p2.y = p1.y - l->getPoint1().y + l->getPoint2().y;
@@ -143,7 +143,7 @@ void PasteAction::Execute()
 		CLine *r = new CLine(p1,p2,t);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
-	
+
 	}else if(m  != NULL){
 		p1.x = P1.x;
 		p1.y = P1.y;
@@ -152,7 +152,7 @@ void PasteAction::Execute()
 		//r->Draw(pOut);
 
 		pManager->AddFigure(r);
-	
+
 	}else if( n != NULL){
 		p1.x = P1.x;
 		p1.y = P1.y;
@@ -160,10 +160,10 @@ void PasteAction::Execute()
 		CEllipse *r = new CEllipse(p1,t);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
-	
-	
+
+
 	}else if(o  != NULL){
-	
+
 	p1.x = P1.x;
 	p1.y = P1.y;
 	p2.x = o->getCorner2().x - o->getCorner1().x + P1.x ;
@@ -178,25 +178,27 @@ void PasteAction::Execute()
 	}else{
 		std::cout<<"g ";
 	}
- 	
-	
-	
+
+
+
 	pManager->RearrangeDeleted();
- 	
-	
-	
-	
+
+
+
+
 	}
 	*/
 	if(!isCopy){
 		pManager->RearrangeDeleted();
+    isCopy = true;
 	}
+
 	//copyFigPtr = NULL;
 	// cutFigPtr = NULL;
-	
-	
- 	
- 	
+
+
+
+
  }
 PasteAction::~PasteAction(){
  //delete c;
