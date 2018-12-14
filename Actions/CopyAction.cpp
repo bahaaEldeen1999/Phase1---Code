@@ -9,6 +9,7 @@
 
   CFigure *FigPtr = NULL;
   bool isCopy;
+   GfxInfo info;
 
 CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 {
@@ -38,7 +39,12 @@ void CopyAction::Execute()
 
 	FigPtr = NULL;
 	FigPtr = pManager->GetFigure(P1.x,P1.y);
+	if(FigPtr){
 	isCopy = true;
+	info = FigPtr->getInfo();
+	}
+	
+	
 
 	//fig->ChngDrawClr(GRAY);
 	//Output* pOut = pManager->GetOutput();

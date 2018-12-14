@@ -3,6 +3,7 @@
 #include "../ApplicationManager.h"
 extern CFigure *FigPtr; //copied fig
 extern bool isCopy;
+extern GfxInfo info;
 //CFigure* getCopied();
 class CopyAction : public Action
 {
