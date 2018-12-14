@@ -5,6 +5,7 @@ CLine::CLine(Point p1 , Point p2 , GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
 	fPoint = p1;
 	sPoint = p2;
+	figtype=1;
 }
 
 void CLine::Draw(Output * pOut) 

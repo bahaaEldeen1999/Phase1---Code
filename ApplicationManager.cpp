@@ -29,6 +29,7 @@
 #include "Actions\loadAction.h"
 #include <Windows.h>
 #include <mmsystem.h>
+#include "Actions\playmodeshape.h"
 #include "Actions\loadAction.h"
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -152,19 +153,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case LOAD:
 			pAct = new loadAct(this);
 			break;
-			case TO_PLAY :
+		case TO_PLAY :
 				pAct = new stm (this);
 				break;
+		case SELECTBYFIGURE :
+			pAct=new playmodeshape(this);
+			break;
 
 		case EXIT:
-				{
-		for(int i=0; i<FigCount; i++)
-		delete FigList[i];
-	delete pIn;
-	delete pOut;
-	delete pAct;
-	PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);
-				}
+				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;
 
 		case STATUS:	//a click on the status bar ==> no action
@@ -260,6 +257,18 @@ void ApplicationManager::SetFigCount(int x)
 {
 
 	FigCount=x;
+}
+////////////////////////////////////////////////////////////////////////////////////
+int ApplicationManager:: FigureCounter(int x)
+{
+	int count=0;
+	for (int i=0;i<FigCount;i++)
+	{
+		if (FigList[i]->getfigtype()==x) { 
+			count++;
+		}
+	}
+	return count;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -402,23 +411,8 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 
 }
-CFigure *ApplicationManager::GetFigures(int x, int y) const
-{
-	//If a figure is found return a pointer to it.
-	//if this point (x,y) does not belong to any figure return NULL
 
-	for (int i=FigCount-1;i>=0;i--)
-	{
-
-	FigList[i]->SetSelected(true);
-	//return FigList[i];
-	}
-	//get figures list
-	return NULL;
-}
- CFigure* ApplicationManager::getFigList(){
- 	return *FigList;
-}
+ 
 int ApplicationManager::getFigCount(){
 	return FigCount;
 }

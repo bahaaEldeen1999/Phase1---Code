@@ -5,6 +5,7 @@ CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo):CFigur
 	corner1 = P1;
 	corner2 = P2;
 	corner3 = P3;
+	figtype=3;
 }
 
 void CTriangle::Draw(Output * pOut) 

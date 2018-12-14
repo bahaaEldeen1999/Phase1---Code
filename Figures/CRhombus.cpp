@@ -3,6 +3,7 @@
 CRhombus::CRhombus(Point p1, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
 	center = p1;
+	figtype=4;
 }
 
 void CRhombus::Draw(Output * pOut) 

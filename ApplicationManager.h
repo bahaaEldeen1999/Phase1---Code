@@ -20,7 +20,6 @@ private:
 	int Fignum;  //Number of Selected figure
 	CFigure* Clipboard;   //Pointer to the copied/cut figure
 
-
 	//Pointers to Input and Output classes
 	Input *pIn;
 	Output *pOut;
@@ -43,6 +42,7 @@ public:
 	int GetFigNum();               //Gets Selected Figure number
 	int GetFigCount();              //Gets Figure Count
 	void RearrangeDeleted();               //Rearranges figures after delete
+	int FigureCounter(int x);  //counts number of x type fig x from 0 to 4
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
@@ -51,8 +51,7 @@ public:
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
 	int getFigCount();
-	CFigure* getFigList();
-	CFigure *GetFigures(int x, int y) const;
+	
 
 };
 
