@@ -1,1 +1,3 @@
-0
+2
+Rectangle        0        89      100     309      266     NON_FILL      BLACK   
+Rectangle        1        337      156     459      316     NON_FILL      BLACK   

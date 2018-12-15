@@ -149,6 +149,7 @@
     <ClCompile Include="Actions\SelectAction.cpp" />
     <ClCompile Include="Actions\stm.cpp" />
     <ClCompile Include="Actions\sv.cpp" />
+    <ClCompile Include="Actions\SwitchToDraw.cpp" />
     <ClCompile Include="Actions\WhiteColorAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="Actions\SelectAction.h" />
     <ClInclude Include="Actions\stm.h" />
     <ClInclude Include="Actions\sv.h" />
+    <ClInclude Include="Actions\SwitchToDraw.h" />
     <ClInclude Include="Actions\WhiteColorAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

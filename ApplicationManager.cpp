@@ -31,6 +31,7 @@
 #include <mmsystem.h>
 #include "Actions\playmodeshape.h"
 #include "Actions\loadAction.h"
+#include "Actions\SwitchToDraw.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -159,7 +160,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case SELECTBYFIGURE :
 			pAct=new playmodeshape(this);
 			break;
-
+		case TO_DRAW:
+			pAct =new SwitchToDraw(this);
+			break;
 		case EXIT:
 				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;

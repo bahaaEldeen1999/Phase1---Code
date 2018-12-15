@@ -45,6 +45,7 @@ void playmodeshape::Execute()
 		
 	//reading parameters and printing info of the game
 	ReadActionParameters();
+	if (P1.y>1250||P1.y<50) {break;}
 	//choosing a figure
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));     //gets selected figures and puts it in selected pointer
 	
