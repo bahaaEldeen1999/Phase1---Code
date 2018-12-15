@@ -20,6 +20,11 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.isFilled = true;
 	FigGfxInfo.FillClr = Fclr; 
 }
+int CFigure:: getfigtype() 
+{
+	return figtype;
+
+}
 
 bool CFigure ::SelectArea(int x,int y) {
 

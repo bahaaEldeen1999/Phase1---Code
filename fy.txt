@@ -1,0 +1,7 @@
+6
+Triangle        0        370      184     602      296     285      342     NON_FILL      BLACK   
+Rectangle        1        97      247     452      341     NON_FILL      RED   
+Line        2        938      152     565      378     RED   
+Rhombus        3        1008      275     NON_FILL      GREEN   
+Elipse       4        216      153     BLUE   BLACK   
+Triangle        5        1225      179     931      287     765      202     BLUE   BLACK   

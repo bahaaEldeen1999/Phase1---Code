@@ -3,6 +3,7 @@
 CRhombus::CRhombus(Point p1, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
 	center = p1;
+	figtype=4;
 }
 
 void CRhombus::Draw(Output * pOut) 
@@ -64,6 +65,7 @@ Infile>>ID;
 Infile>>center.x;
 Infile>>center.y;
 string y;
+string fil;
 Infile>>y;
 string  Clr;
 Infile>>Clr;
@@ -87,12 +89,29 @@ if (y== "NON_FILL") {
 }
 else {
 	FigGfxInfo.isFilled = true;
+fil =y;
+	if (fil=="BLACK") {
+		FigGfxInfo.FillClr= BLACK;
+}
+else if (fil=="RED") {
+	FigGfxInfo.FillClr = RED;
+}
+else if (fil=="BLUE") {
+	FigGfxInfo.FillClr = BLUE;
+}
+else if (fil=="GREEN") {
+	FigGfxInfo.FillClr = GREEN;
+}
+else   {
+	FigGfxInfo.FillClr = WHITE;
+}
 }
 }
 
 void CRhombus:: PrintInfo(Output* pOut)
 {
-	string p="rhombus ID:   Center: ";
+	string p="Rhombus ID:   Center: ";
+
 	p+=to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 

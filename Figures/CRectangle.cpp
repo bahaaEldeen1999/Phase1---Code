@@ -6,6 +6,7 @@ CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(Figure
 {
 	Corner1 = P1;
 	Corner2 = P2;
+	figtype=0;
 }
 	
 
@@ -69,6 +70,7 @@ Infile>>Corner1.y;
 Infile>>Corner2.x;
 Infile>>Corner2.y;
 string y;
+string fil;
 Infile>>y;
 string  Clr;
 Infile>>Clr;
@@ -92,6 +94,22 @@ if (y== "NON_FILL") {
 }
 else {
 	FigGfxInfo.isFilled = true;
+	fil = y; 
+	if (fil=="BLACK") {
+		FigGfxInfo.FillClr= BLACK;
+}
+else if (fil=="RED") {
+	FigGfxInfo.FillClr = RED;
+}
+else if (fil=="BLUE") {
+	FigGfxInfo.FillClr = BLUE;
+}
+else if (fil=="GREEN") {
+	FigGfxInfo.FillClr = GREEN;
+}
+else   {
+	FigGfxInfo.FillClr = WHITE;
+}
 }
 }
 void CRectangle:: PrintInfo(Output* pOut)

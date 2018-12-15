@@ -1,6 +1,6 @@
 #include "ApplicationManager.h"
-
-
+#include <Windows.h>
+#include <mmsystem.h>
 int main()
 {
 

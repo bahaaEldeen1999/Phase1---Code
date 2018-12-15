@@ -25,20 +25,19 @@
 #include "Actions\CopyAction.h"
 #include "Actions\PasteAction.h"
 #include "Actions\CutAction.h"
-
+#include "Actions\stm.h"
 #include "Actions\loadAction.h"
-
-
+#include <Windows.h>
+#include <mmsystem.h>
+#include "Actions\playmodeshape.h"
 #include "Actions\loadAction.h"
-
-
 //Constructor
 ApplicationManager::ApplicationManager()
 {
 	//Create Input and output
 	pOut = new Output;
 	pIn = pOut->CreateInput();
-
+	is_mute = 0;
 	FigCount = 0;
 	SelectedFig=NULL;
 	UI.FillColor = BLACK;
@@ -66,26 +65,33 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	{
 		case DRAW_RECT:
 			pAct = new AddRectAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("rectangle.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_LINE:
 			///create AddLineAction here
 			pAct = new AddLineAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("line.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_TRI:
 			pAct = new AddTriAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("tri.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_ELLIPSE:
 			pAct = new AddEllipseAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("elipse.wav"),NULL, SND_SYNC);
 			break;
 
 		case DRAW_RHOMBUS:
 			pAct = new AddRhombusAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("rho.wav"),NULL, SND_SYNC);
 			break;
 			case SAVE:
            pAct = new SaveAction(this);
@@ -147,11 +153,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case LOAD:
 			pAct = new loadAct(this);
 			break;
-
+		case TO_PLAY :
+				pAct = new stm (this);
+				break;
+		case SELECTBYFIGURE :
+			pAct=new playmodeshape(this);
+			break;
 
 		case EXIT:
-			///create ExitAction here
-
+				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;
 
 		case STATUS:	//a click on the status bar ==> no action
@@ -247,6 +257,18 @@ void ApplicationManager::SetFigCount(int x)
 {
 
 	FigCount=x;
+}
+////////////////////////////////////////////////////////////////////////////////////
+int ApplicationManager:: FigureCounter(int x)
+{
+	int count=0;
+	for (int i=0;i<FigCount;i++)
+	{
+		if (FigList[i]->getfigtype()==x) { 
+			count++;
+		}
+	}
+	return count;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -389,23 +411,8 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 
 }
-CFigure *ApplicationManager::GetFigures(int x, int y) const
-{
-	//If a figure is found return a pointer to it.
-	//if this point (x,y) does not belong to any figure return NULL
 
-	for (int i=FigCount-1;i>=0;i--)
-	{
-
-	FigList[i]->SetSelected(true);
-	//return FigList[i];
-	}
-	//get figures list
-	return NULL;
-}
- CFigure* ApplicationManager::getFigList(){
- 	return *FigList;
-}
+ 
 int ApplicationManager::getFigCount(){
 	return FigCount;
 }

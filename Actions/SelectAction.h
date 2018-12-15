@@ -8,9 +8,9 @@ public:
 public:
 	SelectAction(ApplicationManager *pApp);
 
-	//Reads rectangle parameters
+	//Reads parameters
 	virtual void ReadActionParameters();
 	
-	//Add rectangle to the ApplicationManager
+	//Executes the Action
 	virtual void Execute() ;
 };
