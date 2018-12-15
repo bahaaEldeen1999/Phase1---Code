@@ -30,7 +30,13 @@ void CutAction::Execute()
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
 	FigPtr = NULL;
 	FigPtr = pManager->GetFigure(P1.x,P1.y);
-	isCopy = false;
+	
+	if(FigPtr){
+		//std::cout<<"cut found";
+		info = FigPtr->getInfo();
+		FigPtr->ChngDrawClr(GRAY);
+		isCopy = false;
+	}
 	//FigPtr->ChngDrawClr(GRAY);
 	//cutFigPtr->ChngDrawClr(GRAY);
 	//Output* pOut = pManager->GetOutput();

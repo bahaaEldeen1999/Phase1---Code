@@ -55,7 +55,7 @@ void PasteAction::Execute()
 		p2.y = P1.y + abs(k->getCorner2().y -  k->getCorner1().y) ;
 		GfxInfo t = k->getInfo();
 		//std::cout<<P1.x<<" ";
-		CRectangle *r = new CRectangle(p1,p2,t);
+		CRectangle *r = new CRectangle(p1,p2,info);
 		//std::cout<<" k "<<" ";
 		pManager->AddFigure(r);
 		//std::cout<<"k";
@@ -68,7 +68,7 @@ void PasteAction::Execute()
 		p2.x = p1.x - l->getPoint1().x + l->getPoint2().x;
 		std::cout<<p1.x <<" "<<p1.y<<std::endl << p2.x <<" "<<p2.y<< std::endl;
 		GfxInfo t = l->getInfo();
-		CLine *r = new CLine(p1,p2,t);
+		CLine *r = new CLine(p1,p2,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 
@@ -76,7 +76,7 @@ void PasteAction::Execute()
 		p1.x = P1.x;
 		p1.y = P1.y;
 		GfxInfo t = m->getInfo();
-		CRhombus *r = new CRhombus(p1,t);
+		CRhombus *r = new CRhombus(p1,info);
 		//r->Draw(pOut);
 
 		pManager->AddFigure(r);
@@ -85,7 +85,7 @@ void PasteAction::Execute()
 		p1.x = P1.x;
 		p1.y = P1.y;
 		GfxInfo t = n->getInfo();
-		CEllipse *r = new CEllipse(p1,t);
+		CEllipse *r = new CEllipse(p1,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 
@@ -100,9 +100,11 @@ void PasteAction::Execute()
 	p3.y = o->getCorner3().y -  o->getCorner1().y + P1.y;
 	std::cout<<p1.x <<" "<<p1.y<<std::endl << p2.x <<" "<<p2.y<< std::endl<<p3.x << " " <<p3.y<<std::endl;
 	GfxInfo t = o->getInfo();
-		CTriangle *r = new CTriangle(p1,p2,p3,t);
+		CTriangle *r = new CTriangle(p1,p2,p3,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
+	}else{
+		std::cout<<"hhhh ";
 	}
 
 
@@ -127,7 +129,7 @@ void PasteAction::Execute()
 		GfxInfo t = k->getInfo();
 
 		std::cout<<P1.x<<" ";
-		CRectangle *r = new CRectangle(p1,p2,t);
+		CRectangle *r = new CRectangle(p1,p2,info);
 		//std::cout<<" k "<<" ";
 		pManager->AddFigure(r);
 		//std::cout<<"k";
@@ -140,7 +142,7 @@ void PasteAction::Execute()
 		p2.x = p1.x - l->getPoint1().x + l->getPoint2().x;
 		std::cout<<p1.x <<" "<<p1.y<<std::endl << p2.x <<" "<<p2.y<< std::endl;
 		GfxInfo t = l->getInfo();
-		CLine *r = new CLine(p1,p2,t);
+		CLine *r = new CLine(p1,p2,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 
@@ -148,7 +150,7 @@ void PasteAction::Execute()
 		p1.x = P1.x;
 		p1.y = P1.y;
 		GfxInfo t = m->getInfo();
-		CRhombus *r = new CRhombus(p1,t);
+		CRhombus *r = new CRhombus(p1,info);
 		//r->Draw(pOut);
 
 		pManager->AddFigure(r);
@@ -157,7 +159,7 @@ void PasteAction::Execute()
 		p1.x = P1.x;
 		p1.y = P1.y;
 		GfxInfo t = n->getInfo();
-		CEllipse *r = new CEllipse(p1,t);
+		CEllipse *r = new CEllipse(p1,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 
@@ -172,7 +174,7 @@ void PasteAction::Execute()
 	p3.y = o->getCorner3().y -  o->getCorner1().y + P1.y;
 	std::cout<<p1.x <<" "<<p1.y<<std::endl << p2.x <<" "<<p2.y<< std::endl<<p3.x << " " <<p3.y<<std::endl;
 	GfxInfo t = o->getInfo();
-		CTriangle *r = new CTriangle(p1,p2,p3,t);
+		CTriangle *r = new CTriangle(p1,p2,p3,info);
 		//r->Draw(pOut);
 		pManager->AddFigure(r);
 	}else{
@@ -188,9 +190,9 @@ void PasteAction::Execute()
 
 	}
 	*/
-	if(!isCopy){
+	if(!isCopy && FigPtr){
 		pManager->RearrangeDeleted();
-    isCopy = true;
+		isCopy = true;
 	}
 
 	//copyFigPtr = NULL;
