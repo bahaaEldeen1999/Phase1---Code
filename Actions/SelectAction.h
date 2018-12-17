@@ -5,6 +5,7 @@ public:
 	private:
 	Point P1; //Point of selection
 	
+	
 public:
 	SelectAction(ApplicationManager *pApp);
 
@@ -13,4 +14,5 @@ public:
 	
 	//Executes the Action
 	virtual void Execute() ;
+	
 };

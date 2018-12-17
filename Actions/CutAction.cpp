@@ -4,10 +4,10 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 #include <iostream>
-  //CFigure *FigPtr = NULL;
+
 CutAction::CutAction(ApplicationManager * pApp):Action(pApp)
 {
-	//fig = NULL;
+
 }
  void CutAction::ReadActionParameters()
 {
@@ -25,25 +25,45 @@ void CutAction::Execute()
 {
 	//This action needs to read some parameters first
 	ReadActionParameters();
-
-	//Check for selected figure
-	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	pManager->unSetSelectedFig();
+	pManager->unSetClip();
 	FigPtr = NULL;
-	FigPtr = pManager->GetFigure(P1.x,P1.y);
-	
+	FigPtr->SetSelected(false);
+	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	//FigPtr = pManager->GetSelectedFig();
+	pManager->setClip( pManager->GetSelectedFig());
+	FigPtr = pManager->getClip();
 	if(FigPtr){
-		//std::cout<<"cut found";
+	isCopy = false;
+	info = pManager->GetSelectedFig()->getInfo();
+	//pManager->GetSelectedFig()->
+	 
+	FigPtr->ChngDrawClr(GRAY);
+	FigPtr->SetSelected(false);
+	pManager->unSetSelectedFig();
+	
+	}else{
+	Output* pOut = pManager->GetOutput();
+		pOut->PrintMessage("no figure is selected");
+	}
+	
+
+
+	/*
+	FigPtr = NULL;
+	
+	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	FigPtr = pManager->GetFigure(P1.x,P1.y);
+	if(FigPtr){
+		
 		info = FigPtr->getInfo();
 		FigPtr->ChngDrawClr(GRAY);
 		isCopy = false;
+	}else{
+		Output* pOut = pManager->GetOutput();
+		pOut->PrintMessage("no figure is selected");
 	}
-	//FigPtr->ChngDrawClr(GRAY);
-	//cutFigPtr->ChngDrawClr(GRAY);
-	//Output* pOut = pManager->GetOutput();
-	//cutFigPtr->Draw(pOut);
+	*/
 
-
-	//pOut->DrawRect(fig->getInfo);
-	//std::cout<<"h ";
 
  }

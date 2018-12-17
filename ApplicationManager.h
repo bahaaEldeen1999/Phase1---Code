@@ -52,6 +52,15 @@ public:
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
 	int getFigCount();
+	void setClip(CFigure *h);
+	CFigure* getClip();
+	void unSetSelectedFig(){
+		SelectedFig = NULL;
+		UpdateInterface();
+	}
+	void unSetClip(){
+		Clipboard = NULL;
+	}
 	
 
 };

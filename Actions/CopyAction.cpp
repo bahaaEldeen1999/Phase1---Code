@@ -4,8 +4,9 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 #include <iostream>
+#include "SelectAction.h"
 
-  CFigure *copyFigPtr = NULL;
+
 
   CFigure *FigPtr = NULL;
   bool isCopy;
@@ -13,7 +14,7 @@
 
 CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 {
-	//fig = NULL;
+	
 }
  void CopyAction::ReadActionParameters()
 {
@@ -25,32 +26,46 @@ CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 	//Read 1st corner and store in point P1
 	pIn->GetPointClicked(P1.x, P1.y);
 	pOut->ClearStatusBar();
+	
 }
  //Execute the action
 void CopyAction::Execute()
-{
+{ 
+	
 	//This action needs to read some parameters first
 	ReadActionParameters();
 
 	//Check for selected figure
-	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
-
-	copyFigPtr = pManager->GetFigure(P1.x,P1.y);
-
+	pManager->unSetSelectedFig();
+	pManager->unSetClip();
 	FigPtr = NULL;
+	FigPtr->SetSelected(false);
+	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	pManager->setClip( pManager->GetSelectedFig());
+	FigPtr = pManager->getClip();
+	if(FigPtr){
+		info =  pManager->GetSelectedFig()->getInfo();
+	isCopy = true;
+	}else{
+		Output* pOut = pManager->GetOutput();
+
+		pOut->PrintMessage("no figure is selected");
+	}
+	
+	/*
+	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	
 	FigPtr = pManager->GetFigure(P1.x,P1.y);
 	if(FigPtr){
 	isCopy = true;
 	info = FigPtr->getInfo();
+	}else{
+		Output* pOut = pManager->GetOutput();
+		pOut->PrintMessage("no figure is selected");
 	}
-	
+	*/
 	
 
-	//fig->ChngDrawClr(GRAY);
-	//Output* pOut = pManager->GetOutput();
-	//fig->Draw(pOut);
-
-	//pOut->DrawRect(fig->getInfo);
-	//std::cout<<"h ";
+	
 
  }

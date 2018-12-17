@@ -434,3 +434,12 @@ ApplicationManager::~ApplicationManager()
 int ApplicationManager::getFigCount(){
 	return FigCount;
 }
+///////////////////////////////////////////
+void  ApplicationManager::setClip(CFigure *h){
+		Clipboard = h;
+}
+CFigure*  ApplicationManager::getClip(){
+		return Clipboard;
+}
+
+//////////////////////////////////////////////////

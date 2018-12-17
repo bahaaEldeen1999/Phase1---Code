@@ -31,4 +31,5 @@ void SelectAction::Execute()
 	//Check for selected figure
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
 	
+	
 }
