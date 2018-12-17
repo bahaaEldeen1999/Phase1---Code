@@ -31,6 +31,8 @@
 #include <mmsystem.h>
 #include "Actions\playmodeshape.h"
 #include "Actions\loadAction.h"
+#include "Actions\SwitchToDraw.h"
+#include"Actions/playmodecolor.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -159,7 +161,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case SELECTBYFIGURE :
 			pAct=new playmodeshape(this);
 			break;
-
+		case SELECTBYCOLOR:
+			pAct = new playmodecolor(this);
+			break;
+		case TO_DRAW:
+			pAct =new SwitchToDraw(this);
+			break;
 		case EXIT:
 				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;
@@ -269,6 +276,17 @@ int ApplicationManager:: FigureCounter(int x)
 		}
 	}
 	return count;
+}
+int ApplicationManager::FigureColorCounter(int x)
+{
+	int count = 0;
+	for (int i= 0; i < FigCount; i++)
+	{
+		if (FigList[i]->getfigcolor() == x) {
+			count++;
+		}
+		return count;
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 

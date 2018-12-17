@@ -13,6 +13,7 @@ protected:
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	int figtype; //figtype (0:rectangle,1:line,2:ellipse,3:triangle,4:rhombus)
+	int figcolor; //figcolor (0:red,1:blue,2:green,3:white,4:black)
 	/// Add more parameters if needed.
 
 public:
@@ -23,6 +24,7 @@ public:
 
 	virtual void Draw(Output* pOut)   = 0 ;		//Draw the figure
 	int getfigtype(); //returns figtype
+	int getfigcolor(); //returns figcolor
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 	virtual bool SelectArea(int x,int y); //Checks if clicked point is inside Figure

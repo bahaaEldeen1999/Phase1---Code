@@ -18,6 +18,7 @@ void DeleteAction::Execute()
 	if (pManager->GetSelectedFig()!=NULL)
 	{
 		pManager->RearrangeDeleted();
+		pManager->SetSelectedFig(NULL);
 	}
 	
 	pManager->GetOutput()->ClearStatusBar();
