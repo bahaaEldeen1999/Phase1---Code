@@ -43,6 +43,7 @@ public:
 	int GetFigCount();              //Gets Figure Count
 	void RearrangeDeleted();               //Rearranges figures after delete
 	int FigureCounter(int x);  //counts number of x type fig x from 0 to 4
+	int FigureColorCounter(int x); ////counts number of x color fig x from 0 to 4
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
