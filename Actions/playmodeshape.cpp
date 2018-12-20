@@ -11,7 +11,7 @@ playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 	ifstream Input; 
 	Input.open ("stm.txt");
 	pManager->load (Input);
-	Input.close();
+	Input.close();    //Load Figures 
 	pManager->UpdateInterface();
 	countcorrect=0;
 	countincorrect=0;

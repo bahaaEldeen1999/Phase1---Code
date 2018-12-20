@@ -25,11 +25,11 @@ void CutAction::Execute()
 {
 	//This action needs to read some parameters first
 	ReadActionParameters();
-
+	CFigure* C=pManager->GetFigure(P1.x,P1.y);
 	//Check for selected figure
-	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	pManager->SetSelectedFig(C);
 	FigPtr = NULL;
-	FigPtr = pManager->GetFigure(P1.x,P1.y);
+	FigPtr =C;
 	
 	if(FigPtr){
 		//std::cout<<"cut found";
