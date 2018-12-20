@@ -39,6 +39,7 @@ void GreenColorAction::Execute()
 		UI.FillColor = GREEN;
 	}
 
+	pManager->GetSelectedFig()->SetSelected(false);
 
 	pOut->CreateDrawToolBar();
 }

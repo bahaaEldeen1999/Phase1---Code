@@ -39,6 +39,8 @@ void BlueColorAction::Execute()
 		UI.FillColor = BLUE;
 	}
 
+	pManager->GetSelectedFig()->SetSelected(false);
 
 	pOut->CreateDrawToolBar();
+
 }
