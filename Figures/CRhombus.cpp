@@ -108,6 +108,7 @@ else   {
 }
 }
 
+
 void CRhombus:: PrintInfo(Output* pOut)
 {
 	string p="Rhombus ID:  "+to_string(4000+ID)+" Center: ";

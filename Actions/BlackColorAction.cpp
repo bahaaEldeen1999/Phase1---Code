@@ -39,6 +39,7 @@ void BlackColorAction::Execute()
 		UI.FillColor = BLACK;
 	}
 
+	if (pManager->GetSelectedFig() != 0)
 	pManager->GetSelectedFig()->SetSelected(false);
 
 	pOut->CreateDrawToolBar();

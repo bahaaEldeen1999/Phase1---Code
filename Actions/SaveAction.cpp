@@ -17,10 +17,11 @@ void SaveAction::ReadActionParameters()
 void SaveAction::Execute()
 {
 	ReadActionParameters();
+	Output* pOut = pManager->GetOutput();
+	color y = pOut->getCrntDrawColor();
+	color x = pOut->getCrntFillColor();
 	ofstream OutFile;
 	OutFile.open(file_name+".txt");
 	pManager->saveall(OutFile);
 	OutFile.close();
-
-
 }
