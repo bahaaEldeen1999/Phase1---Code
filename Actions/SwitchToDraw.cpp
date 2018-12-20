@@ -7,6 +7,14 @@
 
 SwitchToDraw::SwitchToDraw(ApplicationManager * pApp):Action(pApp)
 {
+	Output* pOut = pManager->GetOutput();
+	pOut->ClearDrawArea();
+	pManager->Loadme();
+	ifstream Input; 
+	Input.open ("stm.txt");
+	pManager->load (Input);
+	Input.close();
+	pManager->UpdateInterface();
 }
 
 void SwitchToDraw::Execute()

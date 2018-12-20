@@ -80,6 +80,7 @@ else   {
 FigGfxInfo.isFilled = false;
 }
 
+
 void CLine:: PrintInfo(Output* pOut)
 {
 	string p="Line ID: "+to_string(1000+ID);  

@@ -166,7 +166,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case EXIT:
 				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;
-
+				case MUTE:
+			is_mute =1;
+			break;
+		case UNMUTE: 
+			is_mute = 0;
+			break;
 		case STATUS:	//a click on the status bar ==> no action
 			return;
 	}
@@ -297,14 +302,80 @@ int ApplicationManager::GetFigNum()
 {
 	return Fignum;
 }
-void ApplicationManager :: saveall(ofstream &Outfile) {
-	Outfile<<FigCount<<endl;
+void ApplicationManager :: saveall(ofstream &OutFile) {
+	color y = pOut->getCrntDrawColor();
+	color x = pOut->getCrntFillColor();
+	if (y== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (y== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (y== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (y== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (y== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	if (x== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (x== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (x== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (x== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (x== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	OutFile<<endl; 
+	OutFile<<FigCount<<endl;
 	for (int i = 0; i < FigCount; i++) {
-	FigList [i]->save(Outfile,i);
-	Outfile<<endl;
+	FigList [i]->save(OutFile,i);
+	OutFile<<endl;
 }
 }
 void ApplicationManager :: SavebyType (ofstream &Outfile,int x) {
+	color y = pOut->getCrntDrawColor();
+	color x1 = pOut->getCrntFillColor();
+	if (y== BLACK){
+		Outfile<<"BLACK"<<"         ";
+	}
+	else if (y== GREEN) {
+		Outfile<<"GREEN"<<"         ";
+	}
+	else if (y== BLUE) {
+		Outfile<<"BLUE"<<"         ";
+	}
+	else if (y== RED) {
+		Outfile<<"RED"<<"         ";
+	}
+	else if (y== WHITE) {
+		Outfile<<"WHITE"<<"         ";
+	}
+	if (x1== BLACK){
+		Outfile<<"BLACK"<<"         ";
+	}
+	else if (x1== GREEN) {
+		Outfile<<"GREEN"<<"         ";
+	}
+	else if (x1== BLUE) {
+		Outfile<<"BLUE"<<"         ";
+	}
+	else if (x1== RED) {
+		Outfile<<"RED"<<"         ";
+	}
+	else if (x1== WHITE) {
+		Outfile<<"WHITE"<<"         ";
+	}
+	Outfile<<endl; 
 if (x==0) {
 	int count=0;
 	for (int i = 0; i < FigCount; i++) {
@@ -414,7 +485,109 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 
 }
+void ApplicationManager ::load (ifstream &Input) {
+	string fclr , dclry;
+	Input>>dclry>>fclr;
+	if (dclry == "BLACK") {
+		UI.DrawColor = BLACK;
+	}
+	else if (dclry == "RED") {
+		UI.DrawColor = RED;
+	}
+	else if (dclry == "BLUE") {
+		UI.DrawColor = BLUE;
+	}
+	else if  (dclry == "GREEN") {
+		UI.DrawColor = GREEN;
+	}
+	else if (dclry == "WHITE") {
+	UI.DrawColor = WHITE;
+	}
+	if (fclr == "BLACK") {
+		UI.FillColor = BLACK;
+	}
+	else if (fclr == "RED") {
+		UI.FillColor = RED;
+	}
+	else if (fclr == "BLUE") {
+		UI.FillColor = BLUE;
+	}
+	else if  (fclr == "GREEN") {
+		UI.FillColor = GREEN;
+	}
+	else if (fclr == "WHITE") {
+	UI.FillColor = WHITE;
+	}
+	int x;
+	string y;
+	Input>>x;
+	for (int i = 0 ; i<x; i++) {
+		Input>>y;
+	if (y=="Elipse"){
+		Point p;
+		p.x = 100; 
+		p.y = 100;
+		GfxInfo GP;
+		CEllipse *C = new CEllipse (p,GP);
+		C->load (Input);
+		AddFigure (C);
+	}
+		else if (y=="Rectangle"){
+		Point p,y ;
+		y.x = 200;
+		y.y = 150; 
+		p.x = 609; 
+		p.y = 578;
+		GfxInfo GP;
+		CRectangle *C = new CRectangle (p,y,GP);
+		C->load (Input);
+		AddFigure (C);
+	}
+else if (y=="Line"){
+		Point p,y ;
+		y.x = 567;
+		y.y = 126; 
+		p.x = 567; 
+		p.y = 546;
+		GfxInfo GP;
+		CLine *C = new CLine (p,y,GP);
+		C->load (Input);
+		AddFigure (C);
+	}
+else if (y=="Rhombus"){
+		Point p,y ;
+		y.x = 123;
+		y.y = 415; 
+		p.x = 514; 
+		p.y = 606;
+		GfxInfo GP;
+		CRhombus *C = new CRhombus (p,GP);
+		C->load (Input);
+		AddFigure (C);
+}
+else if (y== "Triangle") {
+		Point p,y ,m;
+		m.x = 108; 
+		m.y = 199; 
+		y.x = 178;
+		y.y = 195; 
+		p.x = 205; 
+		p.y = 423;
+		GfxInfo GP;
+		CTriangle *C = new CTriangle (p,y,m,GP);
+		C->load (Input);
+		AddFigure (C);
+}
+	//Here call laod function from CFigures 
+	// then call the appMGr to make add list figures; 
+	
+//	pManager->SavebyType(OutFile,x);
+	//Input.close();
+	//pManager->UpdateInterface();
 
+}
+}
+ 
  
 int ApplicationManager::getFigCount(){
 	return FigCount;

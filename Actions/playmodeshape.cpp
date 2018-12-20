@@ -5,6 +5,14 @@
 #include "..\GUI\Output.h"
 playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 {
+	Output* pOut = pManager->GetOutput();
+	pOut->ClearDrawArea();
+	pManager->Loadme();
+	ifstream Input; 
+	Input.open ("stm.txt");
+	pManager->load (Input);
+	Input.close();
+	pManager->UpdateInterface();
 	countcorrect=0;
 	countincorrect=0;
 	randomfigurecount=0;

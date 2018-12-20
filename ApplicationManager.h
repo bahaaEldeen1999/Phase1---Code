@@ -48,6 +48,7 @@ public:
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window
 	void saveall (ofstream &);
+	void load (ifstream & );
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
 	int getFigCount();
