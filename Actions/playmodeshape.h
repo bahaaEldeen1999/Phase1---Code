@@ -14,5 +14,5 @@ public:
 	virtual void ReadActionParameters();
 	string FigType(int x);
 	// Executes the Algorithm
-	virtual void Execute() ;
+	virtual void Execute();
 };
