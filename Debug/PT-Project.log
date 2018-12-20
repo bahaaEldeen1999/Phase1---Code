@@ -1,41 +1,8 @@
-﻿Build started 12/18/2018 2:46:48 PM.
+﻿Build started 12/20/2018 7:02:18 PM.
      1>Project "C:\Users\AG PC\Documents\GitHub\Phase1---Code\PT-Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Actions\AddEllipseAction.cpp Actions\AddLineAction.cpp Actions\AddRectAction.cpp Actions\AddRhombusAction.cpp Actions\AddTriAction.cpp Actions\BlackColorAction.cpp Actions\BlueColorAction.cpp Actions\BorderColorAction.cpp Actions\ColorIconAction.cpp Actions\CopyAction.cpp Actions\CutAction.cpp Actions\DeleteAction.cpp Actions\FillColorAction.cpp Actions\GreenColorAction.cpp Actions\PasteAction.cpp Actions\RedColorAction.cpp Actions\SaveAction.cpp Actions\SelectAction.cpp Actions\SwitchToDraw.cpp Actions\WhiteColorAction.cpp Actions\loadAction.cpp Actions\playmodeshape.cpp Actions\stm.cpp Actions\sv.cpp ApplicationManager.cpp Figures\CEllipse.cpp Figures\CFigure.cpp Figures\CLine.cpp Figures\CRectangle.cpp Figures\CRhombus.cpp Figures\CTriangle.cpp main.cpp
-         CFigure.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Figures\CTriangle.cpp
          CTriangle.cpp
-         CRhombus.cpp
-         CRectangle.cpp
-         CLine.cpp
-         CEllipse.cpp
-         ApplicationManager.cpp
-         sv.cpp
-         stm.cpp
-         playmodeshape.cpp
-         loadAction.cpp
-         WhiteColorAction.cpp
-         SwitchToDraw.cpp
-         SelectAction.cpp
-         SaveAction.cpp
-         RedColorAction.cpp
-         PasteAction.cpp
-         GreenColorAction.cpp
-         FillColorAction.cpp
-         DeleteAction.cpp
-         CutAction.cpp
-         CopyAction.cpp
-         ColorIconAction.cpp
-         BorderColorAction.cpp
-         BlueColorAction.cpp
-         BlackColorAction.cpp
-         AddTriAction.cpp
-         AddRhombusAction.cpp
-         AddRectAction.cpp
-         AddLineAction.cpp
-         AddEllipseAction.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/PT Project.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/PT Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\PT Project.lib" /MACHINE:X86 /SAFESEH .\Debug/AddEllipseAction.obj
          .\Debug/AddLineAction.obj
@@ -107,43 +74,6 @@
          .\Debug/Output.obj
          .\Debug/ApplicationManager.obj
          .\Debug/main.obj
-     1>AddEllipseAction.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-     1>jutils.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jquant2.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jquant1.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jmemnobs.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jmemmgr.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jidctred.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jidctint.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jidctfst.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jidctflt.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jerror.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdtrans.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdsample.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdpostct.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdphuff.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdmerge.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdmaster.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdmarker.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdmainct.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdinput.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdhuff.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jddctmgr.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdcolor.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdcoefct.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdatasrc.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdapistd.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jdapimin.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jcparam.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jcomapi.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>windowinput.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>mousequeue.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>keyqueue.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>jpegload.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>image.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>colors.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>CMUgraphics.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
-     1>auxil.obj : warning LNK4204: 'C:\Users\AG PC\Documents\GitHub\Phase1---Code\Debug\vc110.pdb' is missing debugging information for referencing module; linking object as if no debug info
          PT-Project.vcxproj -> C:\Users\AG PC\Documents\GitHub\Phase1---Code\.\Debug\PT Project.exe
        BscMake:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o".\Debug/PT Project.bsc" .\Debug\AddEllipseAction.sbr .\Debug\AddLineAction.sbr .\Debug\AddRhombusAction.sbr .\Debug\AddTriAction.sbr .\Debug\BlackColorAction.sbr .\Debug\BlueColorAction.sbr .\Debug\BorderColorAction.sbr .\Debug\ColorIconAction.sbr .\Debug\CopyAction.sbr .\Debug\CutAction.sbr .\Debug\DeleteAction.sbr .\Debug\FillColorAction.sbr .\Debug\GreenColorAction.sbr .\Debug\loadAction.sbr .\Debug\PasteAction.sbr .\Debug\playmodeshape.sbr .\Debug\RedColorAction.sbr .\Debug\SaveAction.sbr .\Debug\SelectAction.sbr .\Debug\stm.sbr .\Debug\sv.sbr .\Debug\SwitchToDraw.sbr .\Debug\WhiteColorAction.sbr .\Debug\auxil.sbr .\Debug\CMUgraphics.sbr .\Debug\colors.sbr .\Debug\image.sbr .\Debug\jpegload.sbr .\Debug\keyqueue.sbr .\Debug\mousequeue.sbr .\Debug\windowinput.sbr .\Debug\jcomapi.sbr .\Debug\jcparam.sbr .\Debug\jdapimin.sbr .\Debug\jdapistd.sbr .\Debug\jdatasrc.sbr .\Debug\jdcoefct.sbr .\Debug\jdcolor.sbr .\Debug\jddctmgr.sbr .\Debug\jdhuff.sbr .\Debug\jdinput.sbr .\Debug\jdmainct.sbr .\Debug\jdmarker.sbr .\Debug\jdmaster.sbr .\Debug\jdmerge.sbr .\Debug\jdphuff.sbr .\Debug\jdpostct.sbr .\Debug\jdsample.sbr .\Debug\jdtrans.sbr .\Debug\jerror.sbr .\Debug\jidctflt.sbr .\Debug\jidctfst.sbr .\Debug\jidctint.sbr .\Debug\jidctred.sbr .\Debug\jmemmgr.sbr .\Debug\jmemnobs.sbr .\Debug\jquant1.sbr .\Debug\jquant2.sbr .\Debug\jutils.sbr .\Debug\CEllipse.sbr .\Debug\CFigure.sbr .\Debug\CLine.sbr .\Debug\CRectangle.sbr .\Debug\AddRectAction.sbr .\Debug\CRhombus.sbr .\Debug\CTriangle.sbr .\Debug\Input.sbr .\Debug\Output.sbr .\Debug\ApplicationManager.sbr .\Debug\main.sbr
@@ -151,4 +81,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.17
+Time Elapsed 00:00:02.77

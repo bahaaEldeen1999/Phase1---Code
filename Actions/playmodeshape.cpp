@@ -7,9 +7,9 @@ playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 {
 	countcorrect=0;
 	countincorrect=0;
-	randomfigtype=rand()%5;       //random number generator
 	randomfigurecount=0;
-	while(randomfigurecount==0){
+	bool figureexist=pManager->GetFigCount()!=0;     //checks if there are figures to not go into an infinite loop
+	while(randomfigurecount==0&&figureexist){
 		randomfigtype=rand()%5;       //random number generator
 	    randomfigurecount=pManager->FigureCounter(randomfigtype); //counting the figures  
 	}
@@ -42,7 +42,7 @@ void playmodeshape::Execute()
 	Output* pOut = pManager->GetOutput();
 	
 	do {
-		
+	if (pManager->GetFigCount()==0) break; //breaks if there are no figures
 	//reading parameters and printing info of the game
 	ReadActionParameters();
 	if (P1.y>1250||P1.y<50) {break;}

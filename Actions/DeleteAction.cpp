@@ -19,9 +19,11 @@ void DeleteAction::Execute()
 	{
 		pManager->RearrangeDeleted();
 		pManager->SetSelectedFig(NULL);
+		pManager->GetOutput()->ClearStatusBar();
 	}
+	else pManager->GetOutput()->PrintMessage("Please Select a Figure To Delete");
 	
-	pManager->GetOutput()->ClearStatusBar();
+	
 }
 
 DeleteAction::~DeleteAction(void)
