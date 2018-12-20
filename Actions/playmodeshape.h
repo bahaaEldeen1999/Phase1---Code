@@ -6,7 +6,7 @@ public:
 	Point P1; //Point of selection
 	int countcorrect,countincorrect; //counters
 	int randomfigtype;//randomfigtype (0:rectangle,1:line,2:ellipse,3:triangle,4:rhombus)
-	int randomfigurecount;
+	int randomfigurecount; //count of the randomized figure 
 public:
 	playmodeshape(ApplicationManager *pApp);
 

@@ -54,7 +54,7 @@ public:
 	void load (ifstream & );
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
-	int getFigCount();
+	int getFigCount();      //returns the Count of figures that are in the FigList
 	
 
 };

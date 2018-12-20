@@ -11,7 +11,7 @@ playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 	ifstream Input; 
 	Input.open ("stm.txt");
 	pManager->load (Input);
-	Input.close();
+	Input.close();    //Load Figures 
 	pManager->UpdateInterface();
 	countcorrect=0;
 	countincorrect=0;
@@ -57,7 +57,7 @@ void playmodeshape::Execute()
 	//choosing a figure
 	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));     //gets selected figures and puts it in selected pointer
 	
-	//add code to check if NULL
+	//Checks if the Figure is correct or not
 	if (pManager->GetSelectedFig()!=NULL) {
 	  if (pManager->GetSelectedFig()->getfigtype()==randomfigtype)        //gets figtype of the selected fig
 	      { countcorrect++;pManager->RearrangeDeleted();pManager->UpdateInterface(); }
@@ -67,7 +67,7 @@ void playmodeshape::Execute()
 	}
 	while (countcorrect!=randomfigurecount);
 
-
+	//print info of the game 
 	
 	string c1=to_string(countcorrect);
 	string c2=to_string(countincorrect);

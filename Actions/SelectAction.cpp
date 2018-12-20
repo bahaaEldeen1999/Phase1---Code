@@ -17,7 +17,7 @@ void SelectAction::ReadActionParameters()
 
 	pOut->PrintMessage("Select a Figure");
 	
-	//Read 1st corner and store in point P1
+	//Read The Point and store in point P1
 	pIn->GetPointClicked(P1.x, P1.y);
 	pOut->ClearStatusBar();
 }
