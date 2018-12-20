@@ -116,8 +116,8 @@ else {
 
 void CTriangle:: PrintInfo(Output* pOut)
 {
-	string p="triangle ID:   Point 1: ";
-	p+=to_string(corner1.x)+' '+to_string(corner1.y)+"Point 2:"+to_string(corner2.x)+' '+to_string(corner2.y) +"Point 3: "+to_string(corner3.x)+' '+to_string(corner3.y);
+	string p="triangle ID: "+to_string(3000+ID)+"  Point 1: ";
+	p+=to_string(corner1.x)+' '+to_string(corner1.y)+" Point 2:"+to_string(corner2.x)+' '+to_string(corner2.y) +" Point 3: "+to_string(corner3.x)+' '+to_string(corner3.y);
 	pOut->PrintMessage(p);
 
 

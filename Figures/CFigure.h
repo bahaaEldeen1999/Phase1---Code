@@ -14,7 +14,7 @@ protected:
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	int figtype; //figtype (0:rectangle,1:line,2:ellipse,3:triangle,4:rhombus)
 	/// Add more parameters if needed.
-
+	
 public:
 	CFigure(GfxInfo FigureGfxInfo);
 

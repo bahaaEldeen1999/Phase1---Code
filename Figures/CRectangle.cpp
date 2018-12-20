@@ -114,8 +114,8 @@ else   {
 }
 void CRectangle:: PrintInfo(Output* pOut)
 {
-	string p="Rectangle ID:   Point 1: ";
-	p+=to_string(Corner1.x)+' '+to_string(Corner1.y)+"Point 2:"+to_string(Corner2.x)+' '+to_string(Corner2.y) ;
+	string p="Rectangle ID: " +to_string(2000+ID);
+	p+="  Point 1: "+to_string(Corner1.x)+' '+to_string(Corner1.y)+' '+"Point 2:"+to_string(Corner2.x)+' '+to_string(Corner2.y) ;
 	pOut->PrintMessage(p);
 
 

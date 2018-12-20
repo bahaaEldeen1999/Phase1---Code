@@ -20,8 +20,9 @@ bool CEllipse:: SelectArea(int x,int y)
 
 void CEllipse:: PrintInfo(Output* pOut)
 {
-	string p="Ellipse ID:   Center: ";
-	p+=to_string(center.x)+' '+to_string(center.y);
+	string p="Ellipse ID: "+to_string(5000+ID);
+
+	p+=" Center: "+to_string(center.x)+' '+to_string(center.y);
 	pOut->PrintMessage(p);
 
 
