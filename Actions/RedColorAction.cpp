@@ -39,5 +39,7 @@ void RedColorAction::Execute()
 		UI.FillColor = RED;
 	}
 
+	pManager->GetSelectedFig()->SetSelected(false);
+
 	pOut->CreateDrawToolBar();
 }
