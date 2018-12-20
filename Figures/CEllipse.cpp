@@ -4,6 +4,27 @@ CEllipse::CEllipse(Point P1, GfxInfo FigGfxInfo):CFigure(FigGfxInfo)
 {
 	center = P1;
 	figtype=2;
+
+	if (FigGfxInfo.FillClr == RED)					//figcolor (0:red,1:blue,2:green,3:white,4:black)
+	{
+		figcolor = 0;
+	}
+	else if (FigGfxInfo.FillClr == BLUE)
+	{
+		figcolor = 1;
+	}
+	else if (FigGfxInfo.FillClr == GREEN)
+	{
+		figcolor = 2;
+	}
+	else if (FigGfxInfo.FillClr == WHITE)
+	{
+		figcolor = 3;
+	}
+	else if (FigGfxInfo.FillClr == BLACK)
+	{
+		figcolor = 4;
+	}
 }
 
 void CEllipse::Draw(Output * pOut) 

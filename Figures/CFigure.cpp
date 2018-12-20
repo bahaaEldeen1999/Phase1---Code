@@ -7,27 +7,6 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 	Selected = false;
 	ID=++countoffigures;
 
-
-	if (FigGfxInfo.FillClr == RED)					//figcolor (0:red,1:blue,2:green,3:white,4:black)
-	{
-		figcolor = 0;
-	}
-	else if (FigGfxInfo.FillClr == BLUE)
-	{
-		figcolor = 1;
-	}
-	else if (FigGfxInfo.FillClr == GREEN)
-	{
-		figcolor = 2;
-	}
-	else if (FigGfxInfo.FillClr == WHITE)
-	{
-		figcolor = 3;
-	}
-	else if (FigGfxInfo.FillClr == BLACK)
-	{
-		figcolor = 4;
-	}
 }
 
 void CFigure::SetSelected(bool s)
@@ -44,26 +23,6 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.isFilled = true;
 	FigGfxInfo.FillClr = Fclr; 
 
-	if (Fclr == RED)					//figcolor (0:red,1:blue,2:green,3:white,4:black)
-	{
-		figcolor = 0;
-	}
-	else if (Fclr == BLUE)
-	{
-		figcolor = 1;
-	}
-	else if (Fclr == GREEN)
-	{
-		figcolor = 2;
-	}
-	else if (Fclr == WHITE)
-	{
-		figcolor = 3;
-	}
-	else if (Fclr == BLACK)
-	{
-		figcolor = 4;
-	}
 }
 int CFigure:: getfigtype() 
 {
@@ -73,7 +32,16 @@ int CFigure:: getfigtype()
 
 int CFigure::getfigcolor()
 {
-	return figcolor;
+	if (FigGfxInfo.FillClr == RED)									//figcolor (0:red,1:blue,2:green,3:white,4:black)
+		return 0;
+	else if (FigGfxInfo.FillClr == BLUE)
+		return 1;
+	else if (FigGfxInfo.FillClr == GREEN)
+		return 2;
+	else if (FigGfxInfo.FillClr == WHITE)
+		return 3;
+	else if (FigGfxInfo.FillClr == BLACK)
+		return 4;
 }
 
 bool CFigure::IsFilled()

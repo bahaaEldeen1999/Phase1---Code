@@ -7,6 +7,27 @@ CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(Figure
 	Corner1 = P1;
 	Corner2 = P2;
 	figtype=0;
+
+	if (FigGfxInfo.FillClr == RED)					//figcolor (0:red,1:blue,2:green,3:white,4:black)
+	{
+		figcolor = 0;
+	}
+	else if (FigGfxInfo.FillClr == BLUE)
+	{
+		figcolor = 1;
+	}
+	else if (FigGfxInfo.FillClr == GREEN)
+	{
+		figcolor = 2;
+	}
+	else if (FigGfxInfo.FillClr == WHITE)
+	{
+		figcolor = 3;
+	}
+	else if (FigGfxInfo.FillClr == BLACK)
+	{
+		figcolor = 4;
+	}
 }
 	
 
