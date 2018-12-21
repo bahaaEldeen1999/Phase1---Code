@@ -75,7 +75,7 @@ void playmodecolor::Execute()
 
 		//add code to check if NULL
 		if (pManager->GetSelectedFig() != NULL) {
-			if (pManager->GetSelectedFig()->getfigtype() == randomfigcolor)        //gets figtype of the selected fig
+			if (pManager->GetSelectedFig()->getfigcolor() == randomfigcolor)        //gets figtype of the selected fig
 			{
 				countcorrect++; pManager->RearrangeDeleted(); pManager->UpdateInterface();
 			}
@@ -84,8 +84,7 @@ void playmodecolor::Execute()
 		else { countincorrect++; }
 	} while (countcorrect != randomfigurecount);
 
-	if (pManager->GetFigCount() != 0 && pManager->IsAllFilled() == true && pManager->IsAlllines() == false)
-	{
+
 		string c1 = to_string(countcorrect);
 		string c2 = to_string(countincorrect);
 		string c3;
@@ -93,5 +92,5 @@ void playmodecolor::Execute()
 		else { c3 = "0"; }
 		pOut->ClearDrawArea();
 		pOut->PrintMessage("Correct Figures:" + c1 + "        InCorrect Figures:" + c2 + "      Percentage: " + c3);
-	}
+	
 }
