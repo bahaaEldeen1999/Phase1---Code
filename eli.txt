@@ -1,0 +1,11 @@
+WHITE         BLACK         
+9
+Elipse       3        521      213     NON_FILL      BLACK   
+Elipse       4        461      367     NON_FILL      BLACK   
+Elipse       5        875      230     NON_FILL      BLUE   
+Elipse       6        841      414     NON_FILL      RED   
+Elipse       7        628      475     NON_FILL      WHITE   
+Elipse       8        58      214     BLUE   WHITE   
+Elipse       9        1200      198     RED   WHITE   
+Elipse       10        577      526     GREEN   WHITE   
+Elipse       11        94      421     BLACK   WHITE   
