@@ -1,0 +1,4 @@
+BLACK         WHITE         
+2
+Triangle        2        273      423     477      407     254      202     BLUE   BLACK   
+Triangle        8        1029      230     777      277     1112      337     WHITE   BLACK   

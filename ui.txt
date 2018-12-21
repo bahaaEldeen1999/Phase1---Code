@@ -1,0 +1,12 @@
+BLUE         RED         
+10
+Line        0        296      313     876      436     BLACK   
+Triangle        1        460      285     787      184     649      436     NON_FILL      BLACK   
+Rectangle        2        156      366     292      198     NON_FILL      RED   
+Elipse       3        793      468     NON_FILL      RED   
+Triangle        4        832      210     601      399     345      137     NON_FILL      BLUE   
+Rectangle        5        852      141     948      294     BLACK   BLUE   
+Line        6        1041      118     807      414     BLUE   
+Rhombus        7        1045      351     BLACK   BLUE   
+Triangle        8        173      535     363      488     269      358     BLUE   BLUE   
+Rectangle        9        1061      156     1134      163     RED   BLUE   

@@ -7,6 +7,7 @@
 
 SwitchToDraw::SwitchToDraw(ApplicationManager * pApp):Action(pApp)
 {
+	// When clicking on switch to draw mode all figures that was drawn in the draw mode will be implicltly loaded from stm.txt file 
 	Output* pOut = pManager->GetOutput();
 	pOut->ClearDrawArea();
 	pManager->Loadme();
@@ -25,7 +26,4 @@ void SwitchToDraw::Execute()
 }
 void SwitchToDraw::ReadActionParameters()
 {
-
-
-
 }

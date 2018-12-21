@@ -18,8 +18,8 @@ void  loadAct::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	pOut->PrintMessage("Load graphs: Please enter the file name you want to save from");
-	file_name = pIn->GetSrting(pOut);
-	pOut->PrintMessage("You will load from  : "+ file_name);
+	file_name = pIn->GetSrting(pOut); // Getting the file that will be loaded from . 
+	pOut->PrintMessage("You will load from  : "+ file_name); // Display the name for the user
 }
 
 void  loadAct::Execute()
@@ -29,7 +29,7 @@ void  loadAct::Execute()
 	ReadActionParameters();
 	ifstream Input;
 	Input.open(file_name+".txt");
-	if (Input.fail()) {
+	if (Input.fail()) { // incase the user enter an invlaid file or an unexisting file the program will give another one  chance for user to enter the name 
 	pOut->PrintMessage("please enter an existing file name in order the load operation  occurs correclty or save first");
 	pOut->PrintMessage("Load graphs: Please enter the file name you want to save from");
 	file_name = pIn->GetSrting(pOut);
