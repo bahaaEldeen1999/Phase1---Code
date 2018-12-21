@@ -15,7 +15,7 @@ void AddRhombusAction::ReadActionParameters()
 
 	pOut->PrintMessage("New Rhombus: Click at the Center");
 
-	pIn->GetPointClicked(P1.x, P1.y);
+	pIn->GetPointClicked(P1.x, P1.y);			//read point from user
 
 	if (UI.CurrentState == 0)
 		RhombusGfxInfo.isFilled = false;	//default is not filled
@@ -32,10 +32,13 @@ void AddRhombusAction::ReadActionParameters()
 
 void AddRhombusAction::Execute()
 {
+	//This action needs to read some parameters first
 	ReadActionParameters();
 	
+	//Create a rhombus with the parameters read from the user
 	CRhombus* Rh = new CRhombus(P1, RhombusGfxInfo);
 
+	//Add the rhombus to the list of figures
 	pManager->AddFigure(Rh);
 }
 

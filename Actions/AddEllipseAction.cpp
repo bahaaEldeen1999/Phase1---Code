@@ -10,12 +10,13 @@ AddEllipseAction::AddEllipseAction(ApplicationManager * pApp) :Action(pApp)
 
 void AddEllipseAction::ReadActionParameters()
 {
+	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	pOut->PrintMessage("New Ellipse: Click at the Center");
 
-	pIn->GetPointClicked(P1.x, P1.y);
+	pIn->GetPointClicked(P1.x, P1.y);		//get point from user
 
 	if (UI.CurrentState == 0)
 		EllipseGfxInfo.isFilled = false;	//default is not filled
@@ -32,7 +33,7 @@ void AddEllipseAction::ReadActionParameters()
 
 void AddEllipseAction::Execute()
 {
-	ReadActionParameters();
+	ReadActionParameters();		//read actions from user
 
 	CEllipse* E = new CEllipse(P1, EllipseGfxInfo);
 

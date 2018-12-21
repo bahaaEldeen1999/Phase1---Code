@@ -84,7 +84,12 @@ void playmodecolor::Execute()
 		else { countincorrect++; }
 	} while (countcorrect != randomfigurecount);
 
-	if (pManager->GetFigCount() != 0 && pManager->IsAllFilled() == true && pManager->IsAlllines() == false)
+
+	bool figureexist = pManager->GetFigCount() != 0;     //checks if there are figures to not go into an infinite loop
+	bool allfilled = pManager->IsAllFilled();
+	bool alllines = pManager->IsAlllines();
+
+	if (allfilled == true && alllines == false)
 	{
 		string c1 = to_string(countcorrect);
 		string c2 = to_string(countincorrect);
