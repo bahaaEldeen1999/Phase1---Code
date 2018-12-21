@@ -84,7 +84,8 @@ void playmodecolor::Execute()
 		else { countincorrect++; }
 	} while (countcorrect != randomfigurecount);
 
-
+	if (pManager->GetFigCount() != 0 && pManager->IsAllFilled() == true && pManager->IsAlllines() == false)
+	{
 		string c1 = to_string(countcorrect);
 		string c2 = to_string(countincorrect);
 		string c3;
@@ -92,5 +93,5 @@ void playmodecolor::Execute()
 		else { c3 = "0"; }
 		pOut->ClearDrawArea();
 		pOut->PrintMessage("Correct Figures:" + c1 + "        InCorrect Figures:" + c2 + "      Percentage: " + c3);
-	
+	}
 }
