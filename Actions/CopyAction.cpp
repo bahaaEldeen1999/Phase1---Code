@@ -43,8 +43,8 @@ void CopyAction::Execute()
 	if(h){
 		
 		pManager->setIsCopy(true); // copy is true
-		
 		pManager->setInfo( h->getInfo() ); //store info
+		
 	}
 	
 	

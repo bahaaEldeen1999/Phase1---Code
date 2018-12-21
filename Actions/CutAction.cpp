@@ -36,8 +36,9 @@ void CutAction::Execute()
 	if(h){
 		
 		pManager->setInfo( h->getInfo() ); //set info
-		h->ChngFillClr(GRAY); // make fill color gray 
+		h->ChngFillClr(GRAY); // make fill color gray
 		pManager->setIsCopy(false); //set copy to false
+		
 	}
 	
 

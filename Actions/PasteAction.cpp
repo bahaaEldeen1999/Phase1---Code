@@ -32,13 +32,13 @@ void PasteAction::Execute()
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
 
-	//store the clip and get the info
+	//store the clip 
 	CFigure *f = pManager->getClip();
+	
+	if( f){
+		pManager->GetSelectedFig()->SetSelected(false); //unselect fig
+// get the info
 	GfxInfo info =pManager->getInfo();
-	
-	
-
-
 	//points help us to draw figs
 	Point p1;
 	Point p2;
@@ -115,6 +115,11 @@ void PasteAction::Execute()
 		//set too true so doesnt delete each one
 		pManager->setIsCopy(true);
 	}
+	
+	}
+	
+
+
 
 
 
