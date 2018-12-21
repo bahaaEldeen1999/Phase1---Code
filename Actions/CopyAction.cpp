@@ -5,11 +5,11 @@
 #include "..\GUI\Output.h"
 #include <iostream>
 
-  CFigure *copyFigPtr = NULL;
+ // CFigure *copyFigPtr = NULL;
 
-  CFigure *FigPtr = NULL;
-  bool isCopy;
-   GfxInfo info;
+//  CFigure *FigPtr = NULL;
+  
+//   GfxInfo info;
 
 CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 {
@@ -25,6 +25,7 @@ CopyAction::CopyAction(ApplicationManager * pApp):Action(pApp)
 	//Read 1st corner and store in point P1
 	pIn->GetPointClicked(P1.x, P1.y);
 	pOut->ClearStatusBar();
+	//std::cout<<"l";
 }
  //Execute the action
 void CopyAction::Execute()
@@ -33,24 +34,20 @@ void CopyAction::Execute()
 	ReadActionParameters();
 
 	//Check for selected figure
-	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y));
+	pManager->SetSelectedFig(pManager->GetFigure(P1.x,P1.y)); //select fig
 
-	copyFigPtr = pManager->GetFigure(P1.x,P1.y);
-
-	FigPtr = NULL;
-	FigPtr = pManager->GetFigure(P1.x,P1.y);
-	if(FigPtr){
-	isCopy = true;
-	info = FigPtr->getInfo();
+	pManager->setClip(NULL); //null the ptr
+	pManager->setClip(pManager->GetSelectedFig()); //set clip 
+	CFigure *h =  pManager->getClip(); //store clip to ptr
+	
+	if(h){
+		
+		pManager->setIsCopy(true); // copy is true
+		
+		pManager->setInfo( h->getInfo() ); //store info
 	}
 	
 	
 
-	//fig->ChngDrawClr(GRAY);
-	//Output* pOut = pManager->GetOutput();
-	//fig->Draw(pOut);
-
-	//pOut->DrawRect(fig->getInfo);
-	//std::cout<<"h ";
-
  }
+

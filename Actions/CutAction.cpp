@@ -4,10 +4,10 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 #include <iostream>
-  //CFigure *FigPtr = NULL;
-CutAction::CutAction(ApplicationManager * pApp):Action(pApp)
+ 
+CutAction::CutAction(ApplicationManager * pApp):CopyAction(pApp)
 {
-	//fig = NULL;
+
 }
  void CutAction::ReadActionParameters()
 {
@@ -27,23 +27,19 @@ void CutAction::Execute()
 	ReadActionParameters();
 	CFigure* C=pManager->GetFigure(P1.x,P1.y);
 	//Check for selected figure
-	pManager->SetSelectedFig(C);
-	FigPtr = NULL;
-	FigPtr =C;
+	pManager->SetSelectedFig(C); //select fig
 	
-	if(FigPtr){
-		//std::cout<<"cut found";
-		info = FigPtr->getInfo();
-		FigPtr->ChngDrawClr(GRAY);
-		isCopy = false;
+	
+	pManager->setClip(NULL); //set clip to null
+	pManager->setClip(pManager->GetSelectedFig()); //set select to clip
+	CFigure *h =  pManager->getClip(); // store the clip to ptr
+	if(h){
+		
+		pManager->setInfo( h->getInfo() ); //set info
+		h->ChngFillClr(GRAY); // make fill color gray 
+		pManager->setIsCopy(false); //set copy to false
 	}
-	//FigPtr->ChngDrawClr(GRAY);
-	//cutFigPtr->ChngDrawClr(GRAY);
-	//Output* pOut = pManager->GetOutput();
-	//cutFigPtr->Draw(pOut);
-
-
-	//pOut->DrawRect(fig->getInfo);
-	//std::cout<<"h ";
+	
 
  }
+

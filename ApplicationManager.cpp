@@ -33,6 +33,9 @@
 #include "Actions\loadAction.h"
 #include "Actions\SwitchToDraw.h"
 #include"Actions/playmodecolor.h"
+ bool ApplicationManager::is_copy ;
+ GfxInfo ApplicationManager::figInfo;
+ CFigure* ApplicationManager::Clipboard;   //Pointer to the copied/cut figure
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -43,6 +46,10 @@ ApplicationManager::ApplicationManager()
 	FigCount = 0;
 	SelectedFig=NULL;
 	UI.FillColor = BLACK;
+	ApplicationManager::is_copy = false;
+	ApplicationManager::Clipboard = NULL;
+	
+	
 	//Create an array of figure pointers and set them to NULL
 	for(int i=0; i<MaxFigCount; i++)
 		FigList[i] = NULL;
@@ -636,3 +643,31 @@ else if (y== "Triangle") {
 int ApplicationManager::getFigCount(){
 	return FigCount;
 }
+/////////////////////////////////////////////////////////
+bool ApplicationManager::getIsCopy(){
+	return ApplicationManager::is_copy;
+
+}
+ void ApplicationManager::setIsCopy(bool v){
+	ApplicationManager::is_copy = v;
+
+}
+///////////////////////////////////////////////////////////
+  void ApplicationManager::setClip(CFigure* c) {
+ ApplicationManager::Clipboard = c;
+ }
+ CFigure* ApplicationManager::getClip(){
+ return ApplicationManager::Clipboard;
+ }
+
+//////////////////////////////////////////////////////////////
+
+ ///////////////////////////////////////////////////////////
+ void ApplicationManager::setInfo(GfxInfo f) {
+	 ApplicationManager::figInfo = f;
+ }
+ GfxInfo ApplicationManager::getInfo(){
+	 return ApplicationManager::figInfo;
+ }
+
+//////////////////////////////////////////////////////////////
