@@ -13,16 +13,18 @@ class ApplicationManager
 
 private:
 	bool is_mute;
+	static bool ApplicationManager::is_copy ; //check if clipboard from copy/cut
 	int FigCount;		//Actual number of figures
 	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
-
+	static GfxInfo ApplicationManager::figInfo;
 	CFigure* SelectedFig; //Pointer to the selected figure
 	int Fignum;  //Number of Selected figure
-	CFigure* Clipboard;   //Pointer to the copied/cut figure
+	static CFigure* ApplicationManager::Clipboard;   //Pointer to the copied/cut figure
 
 	//Pointers to Input and Output classes
 	Input *pIn;
 	Output *pOut;
+
 
 public:
 	ApplicationManager();
@@ -57,7 +59,12 @@ public:
 	void SavebyType(ofstream &, int);
 	void Loadme () ;
 	int getFigCount();      //returns the Count of figures that are in the FigList
-	
+	static bool getIsCopy(); // get the is copy
+	static void setIsCopy(bool v); //set the value of is copy
+	static void setClip(CFigure* c) ; //set the clipboard
+	static CFigure* getClip(); // get the clip
+	static void setInfo(GfxInfo f) ; //set the info
+	static GfxInfo getInfo(); // get the info
 
 };
 

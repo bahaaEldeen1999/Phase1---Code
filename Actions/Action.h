@@ -9,9 +9,11 @@ class ApplicationManager; //forward class declaration
 //Base class for all possible actions
 class Action
 {
+
+	
 protected:
 	ApplicationManager *pManager;	//Actions needs AppMngr to do their job
-
+	
 public:
 
 	Action(ApplicationManager *pApp) { pManager = pApp; }	//constructor
@@ -21,6 +23,8 @@ public:
 	
 	//Execute action (code depends on action type)
 	virtual void Execute() =0;
+
+	
 
 };
 

@@ -484,7 +484,29 @@ void Output::CreateColorBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////
+void Output::CreateResizeBar() const
+{
+	UI.InterfaceMode = MODE_COLOR;
+	string MenuItemImage[5];
+	MenuItemImage[0] = "images\\MenuItems\\resize2.jpg";
+	MenuItemImage[1] = "images\\MenuItems\\resize4.jpg";
+	MenuItemImage[2] = "images\\MenuItems\\resize1-2.jpg";
+	MenuItemImage[3] = "images\\MenuItems\\resize1-4.jpg";
 
+
+	//Draw images for Colors
+	ClearToolBar();
+	//Draw Color items one image at a time
+	for (int i = 0; i <= 4; i++)
+		pWind->DrawImage(MenuItemImage[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+	ActionType ActType;
+	Input *pIn = CreateInput();
+
+}
+
+
+//////////////////////////////////
 Output::~Output()
 {
 	delete pWind;

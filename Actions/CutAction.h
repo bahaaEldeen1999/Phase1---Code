@@ -2,9 +2,8 @@
 #include "action.h"
 #include "../ApplicationManager.h"
 #include "CopyAction.h"
-//extern CFigure *FigPtr ; //copied fig
-//CFigure* getCopied();
-class CutAction : public Action
+
+class CutAction  : public CopyAction
 {
  	private:
 	Point P1; //Point of selection
@@ -16,5 +15,6 @@ public:
 	~CutAction();
 	virtual void ReadActionParameters();
 	virtual void Execute() ;
-	//friend  CFigure* getCopied();
+	
+	
  };
