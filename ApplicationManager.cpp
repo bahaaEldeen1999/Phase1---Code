@@ -33,6 +33,8 @@
 #include "Actions\loadAction.h"
 #include "Actions\SwitchToDraw.h"
 #include"Actions/playmodecolor.h"
+#include"Actions/PushForward.h"
+#include"Actions/PushBackward.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -137,6 +139,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 
 			break;
+
+		case PUSH_FRONT:
+			pAct = new PushForward(this);
+			break;
+
+		case PUSH_BACK:
+			pAct = new PushBackward(this);
+			break;
+
 		case COPY:
 			pAct = new CopyAction(this);
 			break;
@@ -335,6 +346,52 @@ void ApplicationManager:: RearrangeDeleted()
 		SetFigCount(FigCount-1);
 
 
+}
+void ApplicationManager::RearrangeForward()
+{
+	if (Fignum != FigCount-1)
+	{
+		FigList[FigCount] = FigList[Fignum];
+		FigList[FigCount + 1] = FigList[FigCount - 1];
+		FigList[FigCount - 1] = FigList[FigCount];
+		FigList[Fignum] = FigList[FigCount + 1];
+		FigList[FigCount] = NULL;
+		FigList[FigCount + 1] = NULL;
+		UpdateInterface();
+	}
+	else
+	{
+		pOut->PrintMessage("Figure Already on top");
+	}
+
+	if (GetSelectedFig() != 0)
+	{
+		GetSelectedFig()->SetSelected(false);
+		SetSelectedFig(NULL);
+	}
+}
+void ApplicationManager::RearrangeBackward()
+{
+	if (Fignum != 0)
+	{
+		FigList[FigCount] = FigList[Fignum];
+		FigList[FigCount + 1] = FigList[0];
+		FigList[0] = FigList[FigCount];
+		FigList[Fignum] = FigList[FigCount + 1];
+		FigList[FigCount] = NULL;
+		FigList[FigCount + 1] = NULL;
+		UpdateInterface();
+	}
+	else
+	{
+		pOut->PrintMessage("Figure Already on bottom");
+	}
+
+	if (GetSelectedFig() != 0)
+	{
+		GetSelectedFig()->SetSelected(false);
+		SetSelectedFig(NULL);
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 int ApplicationManager::GetFigCount()

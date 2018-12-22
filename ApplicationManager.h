@@ -42,6 +42,8 @@ public:
 	int GetFigNum();               //Gets Selected Figure number
 	int GetFigCount();              //Gets Figure Count
 	void RearrangeDeleted();               //Rearranges figures after delete
+	void RearrangeForward();				//Rearranges figures to be on top
+	void RearrangeBackward();				//Rearranges figures to be on bottom
 	int FigureCounter(int x);  //counts number of x type fig x from 0 to 4
 	int FigureColorCounter(int x); ////counts number of x color fig x from 0 to 4
 	bool IsAllFilled();			//return true if all figures are filled

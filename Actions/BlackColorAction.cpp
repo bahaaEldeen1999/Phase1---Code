@@ -40,7 +40,10 @@ void BlackColorAction::Execute()
 	}
 
 	if (pManager->GetSelectedFig() != 0)
-	pManager->GetSelectedFig()->SetSelected(false);
+	{
+		pManager->GetSelectedFig()->SetSelected(false);
+		pManager->SetSelectedFig(NULL);
+	}
 
 	pOut->CreateDrawToolBar();
 }
