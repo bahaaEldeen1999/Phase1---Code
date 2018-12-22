@@ -45,6 +45,10 @@ void CopyAction::Execute()
 		pManager->setIsCopy(true); // copy is true
 		pManager->setInfo( h->getInfo() ); //store info
 		
+	}else{
+			Output* pOut = pManager->GetOutput();
+
+ 	pOut->PrintMessage("no figure is selected");
 	}
 	
 	

@@ -116,6 +116,8 @@ void PasteAction::Execute()
 		pManager->setIsCopy(true);
 	}
 	
+	}else{
+		pOut->PrintMessage("no figure is in clipboard");
 	}
 	
 

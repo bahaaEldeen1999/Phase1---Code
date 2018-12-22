@@ -33,6 +33,7 @@
 #include "Actions\loadAction.h"
 #include "Actions\SwitchToDraw.h"
 #include"Actions/playmodecolor.h"
+#include "Actions\ResizeAction.h"
  bool ApplicationManager::is_copy ;
  GfxInfo ApplicationManager::figInfo;
  CFigure* ApplicationManager::Clipboard;   //Pointer to the copied/cut figure
@@ -183,6 +184,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case UNMUTE: 
 			is_mute = 0;
 			break;
+		//case ITM_RESIZE:
+		//	pAct = new ResizeAction(this);
+		//	break;
 		case STATUS:	//a click on the status bar ==> no action
 			return;
 	}

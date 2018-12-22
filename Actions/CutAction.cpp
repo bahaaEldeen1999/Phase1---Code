@@ -36,9 +36,14 @@ void CutAction::Execute()
 	if(h){
 		
 		pManager->setInfo( h->getInfo() ); //set info
+		h->ChngDrawClr(GRAY); // make draw color gray
 		h->ChngFillClr(GRAY); // make fill color gray
 		pManager->setIsCopy(false); //set copy to false
 		
+	}else{
+			Output* pOut = pManager->GetOutput();
+
+ 	pOut->PrintMessage("no figure is selected");
 	}
 	
 
