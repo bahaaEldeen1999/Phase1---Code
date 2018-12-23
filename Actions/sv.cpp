@@ -2,7 +2,6 @@
 #include"../ApplicationManager.h"
 #include <fstream>
 // Save by type class 
-int x;
 Svt  :: Svt  (ApplicationManager * pApp):Action(pApp)
 {
 }
@@ -26,10 +25,44 @@ void  Svt  ::ReadActionParameters()
 }
 
 void  Svt  ::Execute()
-{
+{  Output* pOut = pManager->GetOutput();
+	Input* pIn = pManager->GetInput();
 	ReadActionParameters();
 	ofstream OutFile;
 	OutFile.open(file_name+".txt");
+	color y = pOut->getCrntDrawColor();
+	color x1 = pOut->getCrntFillColor();
+	if (y== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (y== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (y== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (y== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (y== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	if (x1== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (x1== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (x1== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (x1== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (x1== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	OutFile<<endl; 
 	pManager->SavebyType(OutFile,x); // calling save by type action from the application manager.  
 	OutFile.close();
 

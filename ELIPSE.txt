@@ -1,0 +1,11 @@
+RED         RED         
+9
+Elipse       2        873      309     NON_FILL      BLACK   
+Elipse       4        852      229     NON_FILL      BLACK   
+Elipse       5        279      234     NON_FILL      GREEN   
+Elipse       6        1077      486     NON_FILL      BLUE   
+Elipse       7        495      200     NON_FILL      RED   
+Elipse       8        81      184     GREEN   RED   
+Elipse       9        1073      211     BLUE   RED   
+Elipse       10        748      449     BLUE   RED   
+Elipse       11        672      129     RED   RED   

@@ -476,39 +476,6 @@ void ApplicationManager :: saveall(ofstream &OutFile) {
 }
 }
 void ApplicationManager :: SavebyType (ofstream &Outfile,int x) {
-	color y = pOut->getCrntDrawColor();
-	color x1 = pOut->getCrntFillColor();
-	if (y== BLACK){
-		Outfile<<"BLACK"<<"         ";
-	}
-	else if (y== GREEN) {
-		Outfile<<"GREEN"<<"         ";
-	}
-	else if (y== BLUE) {
-		Outfile<<"BLUE"<<"         ";
-	}
-	else if (y== RED) {
-		Outfile<<"RED"<<"         ";
-	}
-	else if (y== WHITE) {
-		Outfile<<"WHITE"<<"         ";
-	}
-	if (x1== BLACK){
-		Outfile<<"BLACK"<<"         ";
-	}
-	else if (x1== GREEN) {
-		Outfile<<"GREEN"<<"         ";
-	}
-	else if (x1== BLUE) {
-		Outfile<<"BLUE"<<"         ";
-	}
-	else if (x1== RED) {
-		Outfile<<"RED"<<"         ";
-	}
-	else if (x1== WHITE) {
-		Outfile<<"WHITE"<<"         ";
-	}
-	Outfile<<endl; 
 if (x==0) {
 	int count=0;
 	for (int i = 0; i < FigCount; i++) {
