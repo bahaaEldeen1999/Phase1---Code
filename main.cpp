@@ -7,7 +7,7 @@ int main()
 	ActionType ActType;
 	//Create an object of ApplicationManager
 	ApplicationManager AppManager;
-
+	PlaySound (TEXT("draw mode.wav"),NULL, SND_SYNC);
 	do
 	{		
 		//Read user action

@@ -1,12 +1,2 @@
-BLACK         WHITE         
-10
-Elipse       0        308      268     BLUE   BLACK   
-Rhombus        1        542      189     BLUE   BLACK   
-Triangle        2        273      423     477      407     254      202     BLUE   BLACK   
-Rectangle        3        93      290     237      434     RED   BLACK   
-Elipse       4        485      322     RED   BLACK   
-Rhombus        5        737      274     RED   BLACK   
-Elipse       6        689      187     RED   BLACK   
-Rectangle        7        808      482     966      353     GREEN   BLACK   
-Triangle        8        1029      230     777      277     1112      337     WHITE   BLACK   
-Rhombus        9        250      507     WHITE   BLACK   
+BLACK         BLACK         
+0

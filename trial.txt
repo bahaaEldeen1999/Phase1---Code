@@ -1,0 +1,6 @@
+BLACK         BLACK         
+4
+Rectangle        0        118      154     628      337     NON_FILL      BLACK   
+Triangle        1        927      216     1062      366     549      451     NON_FILL      BLACK   
+Rhombus        2        1065      255     NON_FILL      BLACK   
+Elipse       3        241      470     NON_FILL      BLACK   
