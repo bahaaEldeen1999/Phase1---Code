@@ -31,6 +31,7 @@ void  loadAct::Execute()
 	Input.open(file_name+".txt");
 	if (Input.fail()) { // incase the user enter an invlaid file or an unexisting file the program will give another one  chance for user to enter the name 
 	pOut->PrintMessage("please enter an existing file name in order the load operation  occurs correclty or save first");
+	PlaySound (TEXT("files.wav"),NULL, SND_SYNC);
 	pOut->PrintMessage("Load graphs: Please enter the file name you want to save from");
 	file_name = pIn->GetSrting(pOut);
 	Input.open(file_name+".txt");
