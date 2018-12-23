@@ -107,6 +107,8 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 			case SAVE:
            pAct = new SaveAction(this);
+		   if (!is_mute)
+			PlaySound (TEXT("save.wav"),NULL, SND_SYNC);
 		break;
 
 			case DRAW_Colors:
@@ -142,10 +144,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case SAVE_BY_TYPE:
 			pAct = new Svt(this);
+			if (!is_mute)
+			PlaySound (TEXT("save by type.wav"),NULL, SND_SYNC);
 			break;
 		case SELECT:
 			pAct = new SelectAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("select.wav"),NULL, SND_SYNC);
 			break;
 
 		case PUSH_FRONT:
@@ -158,24 +163,35 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case COPY:
 			pAct = new CopyAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("copy.wav"),NULL, SND_SYNC);
 			break;
 		case PASTE:
 			pAct = new PasteAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("paste.wav"),NULL, SND_SYNC);
 			break;
 		case DEL:
 			pAct = new DeleteAction(this);
+			if (!is_mute)
+			PlaySound (TEXT("delete.wav"),NULL, SND_SYNC);
 
 			break;
 		case CUT :
 			pAct = new CutAction(this);
-
+			if (!is_mute)
+			PlaySound (TEXT("cut.wav"),NULL, SND_SYNC);
 			break;
 
 		case LOAD:
 			pAct = new loadAct(this);
+			if (!is_mute)
+			PlaySound (TEXT("load.wav"),NULL, SND_SYNC);
 			break;
 		case TO_PLAY :
 				pAct = new stm (this);
+				if (!is_mute)
+			PlaySound (TEXT("play mode.wav"),NULL, SND_SYNC);
 				break;
 		case SELECTBYFIGURE :
 			pAct=new playmodeshape(this);
@@ -185,15 +201,20 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case TO_DRAW:
 			pAct =new SwitchToDraw(this);
+			if (!is_mute)
+			PlaySound (TEXT("draw mode.wav"),NULL, SND_SYNC);
 			break;
 		case EXIT:
-				{delete pAct;PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
+				{delete pAct;
+				PlaySound (TEXT("goodbye.wav"),NULL, SND_SYNC);}
 			break;
 				case MUTE:
 			is_mute =1;
+			pOut->PrintMessage("The voice is muted");
 			break;
 		case UNMUTE: 
 			is_mute = 0;
+			pOut->PrintMessage("The voice is unmuted");
 			break;
 		//case ITM_RESIZE:
 		//	pAct = new ResizeAction(this);
