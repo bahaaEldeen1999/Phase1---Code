@@ -1,0 +1,3 @@
+BLACK         BLACK         
+1
+Rhombus        0        390      325     NON_FILL      BLACK   

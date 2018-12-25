@@ -12,6 +12,7 @@ public:
 	loadAct(ApplicationManager *pApp);
 	void ReadActionParameters();
 	void Execute();
+	void load (ifstream &Input) ;
 };
 
 #endif

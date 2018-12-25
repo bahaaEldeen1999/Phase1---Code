@@ -22,6 +22,37 @@ void SaveAction::Execute()
 	color x = pOut->getCrntFillColor(); // Getting the current fill colour
 	ofstream OutFile; // Declaring an instance of file stream 
 	OutFile.open(file_name+".txt");
+	if (y== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (y== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (y== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (y== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (y== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	if (x== BLACK){
+		OutFile<<"BLACK"<<"         ";
+	}
+	else if (x== GREEN) {
+		OutFile<<"GREEN"<<"         ";
+	}
+	else if (x== BLUE) {
+		OutFile<<"BLUE"<<"         ";
+	}
+	else if (x== RED) {
+		OutFile<<"RED"<<"         ";
+	}
+	else if (x== WHITE) {
+		OutFile<<"WHITE"<<"         ";
+	}
+	OutFile<<endl; 
 	pManager->saveall(OutFile); // Calling the function save all from the application manager 
 	OutFile.close();
 }

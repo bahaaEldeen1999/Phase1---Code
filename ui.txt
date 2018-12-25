@@ -1,12 +1,17 @@
-BLUE         RED         
-10
-Line        0        296      313     876      436     BLACK   
-Triangle        1        460      285     787      184     649      436     NON_FILL      BLACK   
-Rectangle        2        156      366     292      198     NON_FILL      RED   
-Elipse       3        793      468     NON_FILL      RED   
-Triangle        4        832      210     601      399     345      137     NON_FILL      BLUE   
-Rectangle        5        852      141     948      294     BLACK   BLUE   
-Line        6        1041      118     807      414     BLUE   
-Rhombus        7        1045      351     BLACK   BLUE   
-Triangle        8        173      535     363      488     269      358     BLUE   BLUE   
-Rectangle        9        1061      156     1134      163     RED   BLUE   
+RED         WHITE         
+15
+Line        0        186      273     621      200     BLACK   
+Rectangle        1        365      316     45      208     NON_FILL      BLACK   
+Triangle        2        326      518     1018      322     459      239     NON_FILL      BLACK   
+Elipse       3        94      373     NON_FILL      BLUE   
+Rhombus        4        1201      164     NON_FILL      RED   
+Triangle        5        202      454     89      302     508      331     RED   RED   
+Triangle        6        706      127     946      326     557      383     BLUE   RED   
+Rectangle        7        972      592     1176      511     RED   RED   
+Line        8        998      334     961      427     RED   
+Triangle        9        405      126     569      137     420      178     NON_FILL      RED   
+Elipse       10        144      146     NON_FILL      GREEN   
+Rhombus        11        74      537     NON_FILL      BLUE   
+Rectangle        12        1154      306     1244      338     WHITE   RED   
+Elipse       13        705      537     WHITE   RED   
+Rhombus        14        912      202     WHITE   RED   

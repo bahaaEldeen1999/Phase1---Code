@@ -1,4 +1,8 @@
-BLACK         WHITE         
-2
-Triangle        2        273      423     477      407     254      202     BLUE   BLACK   
-Triangle        8        1029      230     777      277     1112      337     WHITE   BLACK   
+RED         BLACK         
+6
+Triangle        0        935      331     608      242     553      346     NON_FILL      GREEN   
+Triangle        1        1107      204     1075      500     450      174     BLACK   RED   
+Elipse       2        305      213     NON_FILL      RED   
+Triangle        3        125      439     125      439     473      454     NON_FILL      RED   
+Rectangle        4        81      282     453      416     NON_FILL      RED   
+Line        5        704      163     260      419     RED   

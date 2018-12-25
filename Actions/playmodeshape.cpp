@@ -3,6 +3,7 @@
 
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
+#include "loadAction.h"
 playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 {
 	Output* pOut = pManager->GetOutput();
@@ -10,8 +11,11 @@ playmodeshape::playmodeshape(ApplicationManager * pApp):Action(pApp)
 	pManager->Loadme();
 	ifstream Input; 
 	Input.open ("stm.txt");
-	pManager->load (Input);
-	Input.close();    //Load Figures 
+	loadAct* pAct = NULL;
+	pAct = new loadAct(pManager);
+	pAct->load(Input);
+	//pManager->load (Input);
+	Input.close();
 	pManager->UpdateInterface();
 	countcorrect=0;
 	countincorrect=0;

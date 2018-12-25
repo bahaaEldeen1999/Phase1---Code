@@ -436,39 +436,6 @@ int ApplicationManager::GetFigNum()
 	return Fignum;
 }
 void ApplicationManager :: saveall(ofstream &OutFile) {
-	color y = pOut->getCrntDrawColor();
-	color x = pOut->getCrntFillColor();
-	if (y== BLACK){
-		OutFile<<"BLACK"<<"         ";
-	}
-	else if (y== GREEN) {
-		OutFile<<"GREEN"<<"         ";
-	}
-	else if (y== BLUE) {
-		OutFile<<"BLUE"<<"         ";
-	}
-	else if (y== RED) {
-		OutFile<<"RED"<<"         ";
-	}
-	else if (y== WHITE) {
-		OutFile<<"WHITE"<<"         ";
-	}
-	if (x== BLACK){
-		OutFile<<"BLACK"<<"         ";
-	}
-	else if (x== GREEN) {
-		OutFile<<"GREEN"<<"         ";
-	}
-	else if (x== BLUE) {
-		OutFile<<"BLUE"<<"         ";
-	}
-	else if (x== RED) {
-		OutFile<<"RED"<<"         ";
-	}
-	else if (x== WHITE) {
-		OutFile<<"WHITE"<<"         ";
-	}
-	OutFile<<endl; 
 	OutFile<<FigCount<<endl;
 	for (int i = 0; i < FigCount; i++) {
 	FigList [i]->save(OutFile,i);
@@ -585,7 +552,9 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 
 }
-void ApplicationManager ::load (ifstream &Input) {
+
+
+/*void ApplicationManager ::load (ifstream &Input) {
 	string fclr , dclry;
 	Input>>dclry>>fclr;
 	if (dclry == "BLACK") {
@@ -687,7 +656,9 @@ else if (y== "Triangle") {
 
 }
 }
- 
+ */
+
+
  
 int ApplicationManager::getFigCount(){
 	return FigCount;

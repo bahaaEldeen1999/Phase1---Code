@@ -3,15 +3,18 @@
 
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
-
+#include "loadAction.h"
 playmodecolor::playmodecolor(ApplicationManager * pApp):Action(pApp)
 {
 	Output* pOut = pManager->GetOutput();
 	pOut->ClearDrawArea();
 	pManager->Loadme();
-	ifstream Input;
-	Input.open("stm.txt");
-	pManager->load(Input);
+	ifstream Input; 
+	Input.open ("stm.txt");
+	loadAct* pAct = NULL;
+	pAct = new loadAct(pManager);
+	pAct->load(Input);
+	//pManager->load (Input);
 	Input.close();
 	pManager->UpdateInterface();
 

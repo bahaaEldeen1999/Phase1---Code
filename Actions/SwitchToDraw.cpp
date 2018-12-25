@@ -3,7 +3,7 @@
 
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
-
+#include "loadAction.h"
 
 SwitchToDraw::SwitchToDraw(ApplicationManager * pApp):Action(pApp)
 {
@@ -13,7 +13,10 @@ SwitchToDraw::SwitchToDraw(ApplicationManager * pApp):Action(pApp)
 	pManager->Loadme();
 	ifstream Input; 
 	Input.open ("stm.txt");
-	pManager->load (Input);
+	loadAct* pAct = NULL;
+	pAct = new loadAct(pManager);
+	pAct->load(Input);
+	//pManager->load (Input);
 	Input.close();
 	pManager->UpdateInterface();
 }

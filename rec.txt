@@ -1,0 +1,5 @@
+RED         BLACK         
+3
+Rectangle        0        153      202     521      324     NON_FILL      BLACK   
+Rectangle        5        41      300     270      154     WHITE   RED   
+Rectangle        7        663      388     861      199     BLACK   RED   
